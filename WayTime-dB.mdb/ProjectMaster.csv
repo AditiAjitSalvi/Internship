@@ -1,0 +1,11 @@
+ProjectID,OEMName,EndUserName,PlantName,Location,PlantDetails,NoOfStations,NoOfTransporters,NoOfCrossTrolleys,NoOfRows,DistanceBtnRow12,DistanceBtnRow23,DistanceBtnRow34,DistanceBtnRow45
+p1,psg,sar coating,sar coating,bawal,test,25,4,2,2,15,0,0,0
+Prj001,psg,Karishma Finishers,Karishma Barrel,Faridabad,Barrel Line,21,2,2,2,15,0,0,0
+1,A1,Swastid,Swastid,Halol,,47,5,2,2,10000,0,0,0
+A1001,A1,Vidushi Wires,Vidushi,Mumbai,Barrel line,55,6,2,2,1250,0,0,0
+Shree_Vinayak,Komal,Shree Vinayak,,Chakan,,66,7,2,2,2230,0,0,0
+Osho,psg,Osho,,Ludhiyana,,40,5,1,0,2230,0,0,0
+Dham,A1,Dham,Dham,Nashik,Al Zn Plating,61,4,1,2,12000,0,0,0
+Swastid,A1 Pollutech,Swastid,Swastid,Gujrat,SCADA,47,5,2,2,2230,0,0,0
+Prius,A1,Prius,ABS Plating,Sonepat,,60,4,2,2,250,0,0,0
+Bhagwan,PSG,Bhagwan,Bhagwan,Delhi,,20,3,1,1,0,0,0,0

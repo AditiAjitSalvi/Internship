@@ -1,0 +1,29 @@
+Command,Value
+Get From,1
+Put On,2
+Get From,2
+Put On,3
+Get From,3
+Put On,3
+Get From,3
+Put On,4
+Get From,4
+Put On,5
+Get From,5
+Put On,6
+Wait For S,300
+Get From,6
+Put On,7
+Wait For S,30
+Get From,7
+Put On,8
+Wait For S,300
+Get From,8
+Put On,9
+Wait For S,600
+Get From,9
+Put On,10
+Wait For S,60
+Get From,10
+Put On,11
+Wait For S,60

@@ -1,0 +1,6 @@
+torch
+fastapi
+uvicorn
+streamlit
+requests
+pandas

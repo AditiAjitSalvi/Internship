@@ -1,0 +1,7 @@
+project_id,station_no,process_name,critical_status,distance_mm,dip_time_sec
+1,1,Loading with CT,High,0,100
+1,2,Loading 1,Low,2000,260
+1,3,Loading 2,Low,3000,161
+1,4,Loading 3,High,4000,123
+1,5,Loading 4,Low,5000,123
+1,6,Hot Soak 1,High,6000,300

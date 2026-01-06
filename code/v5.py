@@ -1,0 +1,456 @@
+import os
+import csv
+import random
+import math
+import argparse
+from collections import defaultdict
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.distributions import Categorical
+from tabulate import tabulate
+wagon_master_csv = r"e:\Internship\WayTime-dB.mdb\WagonMaster.csv"
+
+# ==========================================
+# CONFIGURATION
+# ==========================================
+csv_programs = r"e:\Internship\WayTime-dB.mdb\AutoSequencePrograms.csv"
+csv_zones = r"e:\Internship\WayTime-dB.mdb\CrossTrolleyMaster.csv"
+csv_train_seq = r"e:\Internship\Sequnce-trainfinal.csv"
+station_master_csv = r"e:\Internship\WayTime-dB.mdb\StationMaster.csv"
+
+# Hyperparameters
+LR = 1e-4
+GAMMA = 0.99
+EPS_CLIP = 0.2
+K_EPOCHS = 4
+D_MODEL = 64
+N_HEADS = 4
+N_LAYERS = 2
+MAX_STATIONS = 200 
+MAX_STEPS = 50     
+BATCH_SIZE = 16
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+# ==========================================
+# DATA LOADING
+# ==========================================
+def load_wagon_speeds(wagon_id=None):
+    """
+    Loads wagon speeds from WagonMaster.csv.
+    If wagon_id is provided, returns speeds for that wagon.
+    Otherwise returns a default or dictionary.
+    """
+    speeds = {}
+    try:
+        with open(wagon_master_csv, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                # Key can be ID or WagonNumber
+                # Using ID as key
+                try:
+                    # speeds: Superfast, Fast, Slow
+                    sf = float(row['SuperfastSpeed'])
+                    f_spd = float(row['FastSpeed'])
+                    s_spd = float(row['SlowSpeed'])
+                    
+                    # Assuming WagonNumber or ID is the identifier
+                    # User said "i give speeds of wagone in input line", which implies manual override,
+                    # but "use @[...] as referance".
+                    # We'll store by WagonNumber (e.g., "Wagon 1")
+                    w_num = row['WagonNumber'].strip()
+                    speeds[w_num] = (sf, f_spd, s_spd)
+                    
+                    # Also store by simple ID if needed
+                    speeds[row['ID']] = (sf, f_spd, s_spd)
+                except:
+                    continue
+    except FileNotFoundError:
+        print("WagonMaster.csv not found.")
+        return None
+        
+    if wagon_id and wagon_id in speeds:
+        return speeds[wagon_id]
+        
+    return speeds
+
+def load_station_censor_data():
+    """
+    Loads CensorDistance from StationMaster.csv.
+    Returns dict: (project_id_str, station_no_int) -> censor_distance_float
+    Also tries (project_id_int, station_no_int)
+    """
+    censor_map = {}
+    try:
+        with open(station_master_csv, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    pid_str = row['ProjectID']
+                    stn = int(row['StationNumber'])
+                    cdist = row.get('CensorDistance', '')
+                    if cdist and cdist.strip():
+                        val = float(cdist)
+                        censor_map[(pid_str, stn)] = val
+                        # Try to handle numeric project ids
+                        if pid_str.isdigit():
+                            censor_map[(int(pid_str), stn)] = val
+                except:
+                    continue
+    except:
+        pass
+    return censor_map
+
+def calculate_time_value(distance1, distance2, distance3, sfspeed, fspeed, sspeed):
+    """
+    Calculates time value based on the formula:
+    CalculatedTimevalue1 = ((distance1) / (sfspeed * 16.66)) + ((distance2) / (fspeed * 16.66)) + ((distance3) / (sspeed * 16.66)))
+    """
+    try:
+        # Avoid division by zero
+        sfs = sfspeed * 16.66 if sfspeed > 0 else 1.0
+        fs = fspeed * 16.66 if fspeed > 0 else 1.0
+        ss = sspeed * 16.66 if sspeed > 0 else 1.0
+        
+        t1 = (distance1) / sfs
+        t2 = (distance2) / fs
+        t3 = (distance3) / ss
+        return t1 + t2 + t3
+    except:
+        return 0
+
+def load_data():
+    print("Loading data...")
+    sequences = defaultdict(list)
+    vocab_cmd = {"<PAD>": 0, "<SOS>": 1, "<EOS>": 2}
+    
+    with open(csv_programs, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                seq_id = row['ProgramNo'] + "_" + row['ProjectID']
+                cmd = row['Instruction']
+                stn = int(row['InstructionValue']) if row['InstructionValue'] else 0
+                if cmd not in vocab_cmd:
+                    vocab_cmd[cmd] = len(vocab_cmd)
+                sequences[seq_id].append((vocab_cmd[cmd], stn))
+            except Exception:
+                continue
+
+    train_data = []
+    for seq in sequences.values():
+        train_data.append(seq)
+        
+    print(f"Loaded {len(train_data)} sequences.")
+    
+    adj_list = defaultdict(list)
+    with open(csv_zones, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                s1 = int(row['Row1StationNo'])
+                s2 = int(row['Row2StationNo'])
+                adj_list[s1].append(s2)
+                adj_list[s2].append(s1)
+            except Exception:
+                continue
+                
+    return train_data, adj_list, vocab_cmd
+
+# ==========================================
+# MODELS (TRANSFORMER + GNN + PPO)
+# ==========================================
+# (Condensed version of v4.py models for brevity in v5.py)
+class SeqTransformer(nn.Module):
+    def __init__(self, n_cmds, n_stations, d_model=D_MODEL):
+        super(SeqTransformer, self).__init__()
+        self.cmd_emb = nn.Embedding(n_cmds, d_model)
+        self.stn_emb = nn.Embedding(n_stations, d_model)
+        self.pos_emb = nn.Embedding(MAX_STEPS, d_model)
+        encoder_layer = nn.TransformerEncoderLayer(d_model=d_model, nhead=N_HEADS, batch_first=True)
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=N_LAYERS)
+        self.fc_cmd = nn.Linear(d_model, n_cmds)
+        self.fc_stn = nn.Linear(d_model, n_stations)
+
+    def forward(self, cmd_seq, stn_seq):
+        seq_len = cmd_seq.size(1)
+        pos = torch.arange(seq_len, device=cmd_seq.device).unsqueeze(0).expand(cmd_seq.size(0), -1)
+        x = self.cmd_emb(cmd_seq) + self.stn_emb(stn_seq) + self.pos_emb(pos)
+        x = self.transformer(x)
+        return self.fc_cmd(x), self.fc_stn(x)
+
+class SafetyGNN(nn.Module):
+    def __init__(self, n_stations, d_model=D_MODEL):
+        super(SafetyGNN, self).__init__()
+        self.state_emb = nn.Embedding(2, d_model)
+        self.w = nn.Linear(d_model, d_model)
+
+    def forward(self, station_states, adj_matrix):
+        x = self.state_emb(station_states)
+        out = []
+        for i in range(x.size(0)):
+            h = x[i]
+            aggr = torch.mm(adj_matrix, h) 
+            h_next = torch.relu(self.w(aggr))
+            out.append(h_next)
+        return torch.stack(out)
+
+class ActorCritic(nn.Module):
+    def __init__(self, n_cmds, n_stations, d_model=D_MODEL):
+        super(ActorCritic, self).__init__()
+        self.transformer = SeqTransformer(n_cmds, n_stations, d_model)
+        self.gnn = SafetyGNN(n_stations, d_model)
+        self.actor_cmd = nn.Linear(d_model * 2, n_cmds)
+        self.actor_stn = nn.Linear(d_model * 2, n_stations)
+        self.critic = nn.Linear(d_model * 2, 1)
+
+    def forward(self, cmd_seq, stn_seq, station_states, adj_matrix):
+        t_logits_cmd, t_logits_stn = self.transformer(cmd_seq, stn_seq)
+        seq_emb = torch.cat([t_logits_cmd[:, -1, :], t_logits_stn[:, -1, :]], dim=-1)
+        
+        # Proper context extraction (simplified for this script)
+        seq_len = cmd_seq.size(1)
+        pos = torch.arange(seq_len, device=cmd_seq.device).unsqueeze(0).expand(cmd_seq.size(0), -1)
+        x_seq = self.transformer.cmd_emb(cmd_seq) + self.transformer.stn_emb(stn_seq) + self.transformer.pos_emb(pos)
+        x_seq = self.transformer.transformer(x_seq)
+        ctx_seq = x_seq[:, -1, :] 
+
+        x_gnn = self.gnn(station_states, adj_matrix)
+        ctx_safe, _ = torch.max(x_gnn, dim=1)
+        
+        state = torch.cat([ctx_seq, ctx_safe], dim=-1)
+        
+        return torch.softmax(self.actor_cmd(state), dim=-1), torch.softmax(self.actor_stn(state), dim=-1), self.critic(state)
+
+class PPOAgent:
+    def __init__(self, vocab_cmd, n_stations, adj_list):
+        self.vocab_cmd = vocab_cmd
+        self.n_stations = n_stations
+        self.adj_matrix = self._build_adj_matrix(adj_list, n_stations)
+        self.policy = ActorCritic(len(vocab_cmd), n_stations).to(device)
+        self.optimizer = optim.Adam(self.policy.parameters(), lr=LR)
+        
+    def _build_adj_matrix(self, adj_list, n):
+        mat = torch.zeros((n, n), device=device)
+        for u, neighbors in adj_list.items():
+            if u < n:
+                for v in neighbors:
+                    if v < n:
+                        mat[u, v] = 1.0
+        return mat
+
+    def select_action(self, cmd_seq, stn_seq, station_states):
+        cmd_seq = torch.tensor([cmd_seq], dtype=torch.long).to(device)
+        stn_seq = torch.tensor([stn_seq], dtype=torch.long).to(device)
+        station_states = torch.tensor([station_states], dtype=torch.long).to(device)
+        with torch.no_grad():
+            probs_cmd, probs_stn, val = self.policy(cmd_seq, stn_seq, station_states, self.adj_matrix)
+        dist_cmd = Categorical(probs_cmd)
+        dist_stn = Categorical(probs_stn)
+        action_cmd = dist_cmd.sample()
+        action_stn = dist_stn.sample()
+        return action_cmd.item(), action_stn.item(), dist_cmd.log_prob(action_cmd) + dist_stn.log_prob(action_stn), val
+
+class WagonEnv:
+    def __init__(self, adj_list, max_stations):
+        self.adj_list = adj_list
+        self.max_stations = max_stations
+        self.reset()
+    def reset(self):
+        self.station_occupancy = [0] * self.max_stations
+        self.step_count = 0
+        return self.station_occupancy
+    def step(self, cmd, stn):
+        reward = 0
+        done = False
+        self.step_count += 1
+        if stn >= self.max_stations: return self.station_occupancy, -10, True
+        if self.station_occupancy[stn] == 1: reward -= 10
+        elif any(self.station_occupancy[n] == 1 for n in self.adj_list.get(stn, [])): reward -= 5
+        self.station_occupancy[stn] = 1 
+        reward += 1
+        if self.step_count >= MAX_STEPS: done = True
+        return self.station_occupancy, reward, done
+
+# ==========================================
+# SEQUENCE GENERATION (MODIFIED)
+# ==========================================
+def generate_sequence_data(tanks, wagon_speeds=None, censor_map=None, default_censor=5.0):
+    """
+    Generates sequence with time calculations.
+    wagon_speeds: tuple (sfspeed, fspeed, sspeed)
+    """
+    if len(tanks) < 2:
+        return [["Error", "Need at least 2 stations to form a sequence."]]
+
+    # Header for CSV output
+    sequence_data = [["Command", "Value", "CalculatedTime"]]
+
+    sfs, fs, ss = wagon_speeds if wagon_speeds else (10.0, 10.0, 10.0)
+    
+    # We need to map tank items to project IDs to look up censor distance
+    
+    for i in range(len(tanks) - 1):
+        curr_tank = tanks[i]
+        next_tank = tanks[i+1]
+        
+        s_curr = curr_tank.get('station_no', '?')
+        s_next = next_tank.get('station_no', '?')
+        
+        # Try to get distances from tank data
+        dist_curr = 0.0
+        dist_next = 0.0
+        try:
+            dist_curr = float(curr_tank.get('distance_mm', 0))
+            dist_next = float(next_tank.get('distance_mm', 0))
+        except:
+            pass
+            
+        # distance1: distance between 2 stations
+        # If available in tank data, use it. Otherwise estimated.
+        # Logic: absolute difference
+        distance1 = abs(dist_next - dist_curr)
+        
+        # distance3: censor distance
+        # Look up from map
+        distance3 = default_censor
+        pid = curr_tank.get('project_id', '1')
+        try:
+            # Try int
+            distance3 = censor_map.get((int(pid), int(s_next)), default_censor)
+        except:
+            # Try str
+            distance3 = censor_map.get((str(pid), int(s_next)), default_censor)
+
+        # distance2: distance between 2 stations - censor distance
+        distance2 = max(0, distance1 - distance3)
+        
+        calc_time = calculate_time_value(distance1, distance2, distance3, sfs, fs, ss)
+            
+        dip_time_next = next_tank.get('dip_time_sec', '0')
+        try:
+            dip_time_next = float(dip_time_next)
+        except:
+            dip_time_next = 0
+        
+        # 1. Get From
+        sequence_data.append(["Get From", s_curr, ""])
+        
+        # 2. Put On (Include Time Calculation here)
+        sequence_data.append(["Put On", s_next, f"{calc_time:.2f}"])
+        
+        # 3. Wait For S
+        if dip_time_next > 0:
+            sequence_data.append(["Wait For S", int(dip_time_next), ""])
+            
+    return sequence_data
+
+def generate_sequence_from_tanks(csv_path, speeds_input=None):
+    print(f"Generating sequence from {csv_path}...")
+    if not os.path.exists(csv_path):
+        print(f"Error: File {csv_path} not found.")
+        return
+
+    # Load speeds from CSV first as reference
+    wagon_speeds_map = load_wagon_speeds() or {}
+    censor_map = load_station_censor_data()
+    
+    # Determine which speeds to use
+    sfs, fs, ss = 10.0, 10.0, 10.0 # Defaults
+    
+    # If user provided speeds in input line (arg), parse them
+    if speeds_input:
+        try:
+            parts = speeds_input.split(',')
+            if len(parts) == 3:
+                sfs, fs, ss = map(float, parts)
+            else:
+                sfs, fs, ss = wagon_speeds_map.get(speeds_input, (10.0, 10.0, 10.0))
+        except:
+            # Maybe it's a Wagon Name?
+            if speeds_input in wagon_speeds_map:
+                sfs, fs, ss = wagon_speeds_map[speeds_input]
+
+    print(f"Using Speeds: SuperFast={sfs}, Fast={fs}, Slow={ss}")
+
+    try:
+        with open(csv_path, 'r') as f:
+            reader = csv.DictReader(f)
+            tanks = list(reader)
+            
+        print(f"Found {len(tanks)} stations/processes.")
+        
+        seq_data = generate_sequence_data(tanks, (sfs, fs, ss), censor_map=censor_map)
+                
+        seq_data = generate_sequence_data(tanks, (sfs, fs, ss), censor_map=censor_map)
+        
+        # Table Display
+        try:
+            
+            print("\n" + tabulate(seq_data[1:], headers=seq_data[0], tablefmt="grid"))
+        except ImportError:
+            # Fallback manual table
+            print_simple_table(seq_data[0], seq_data[1:])
+             
+        print("\n==========================\n")
+        
+    except Exception as e:
+        print(f"Error processing CSV: {e}")
+
+def print_simple_table(headers, rows):
+    # Determine column widths
+    widths = [len(h) for h in headers]
+    for row in rows:
+        for i, val in enumerate(row):
+            if i < len(widths):
+                widths[i] = max(widths[i], len(str(val)))
+    
+    # Create separator and format
+    separator = "+-" + "-+-".join(["-" * w for w in widths]) + "-+"
+    row_fmt = "| " + " | ".join([f"{{:<{w}}}" for w in widths]) + " |"
+    
+    print(separator)
+    print(row_fmt.format(*headers))
+    print(separator.replace("-", "="))
+    for row in rows:
+        print(row_fmt.format(*[str(r) for r in row]))
+    print(separator)
+
+# ==========================================
+# MAIN EXECUTION
+# ==========================================
+def main():
+    parser = argparse.ArgumentParser(description="Train RL Agent or Generate Sequence")
+    parser.add_argument("--input", type=str, help="Path to tanks/input CSV for sequence generation")
+    parser.add_argument("--speeds", type=str, help="Wagon Speeds (sf,f,s) OR Wagon Name", default="Wagon 1")
+    args = parser.parse_args()
+    
+    if args.input:
+        generate_sequence_from_tanks(args.input, args.speeds)
+        return
+
+    # Default Training Mode
+    train_data, adj_list, vocab_cmd = load_data()
+    agent = PPOAgent(vocab_cmd, MAX_STATIONS, adj_list)
+    env = WagonEnv(adj_list, MAX_STATIONS)
+    print("\nStarting Training Loop...")
+    for episode in range(1, 11): 
+        state = env.reset()
+        curr_cmd_seq = [vocab_cmd["<SOS>"]]
+        curr_stn_seq = [0]
+        ep_reward = 0
+        for t in range(MAX_STEPS):
+            a_cmd, a_stn, _, _ = agent.select_action(curr_cmd_seq, curr_stn_seq, state)
+            next_state, reward, done = env.step(a_cmd, a_stn)
+            curr_cmd_seq.append(a_cmd)
+            curr_stn_seq.append(a_stn)
+            state = next_state
+            ep_reward += reward
+            if done: break
+        print(f"Episode {episode}: Total Reward = {ep_reward}")
+    print("Training Finished.")
+    torch.save(agent.policy.state_dict(), "model_v4.pth")
+
+if __name__ == "__main__":
+    main()
