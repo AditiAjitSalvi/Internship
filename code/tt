@@ -19,3 +19,6 @@ project_id,station_no,process_name,critical_status,distance_mm,dip_time_sec
 1,10,CF Rinse 1,Low,10000,60
 1,11,CF Rinse 2,Low,11000,60
 python code/v5.py --input code/tanks_csv.csv --speeds "Wagon 1"
+
+Wagon Number,Superfast Speed,Fast Speed,Slow Speed,Lift Time,Lift Stroke Speed,Lower Time,Minimum Station No,Maximum Station No,Basic Position,No Of Station To Stop
+Wagon 1,13.3,28.0,7.0,10.0,1.0,10.0,1,100,5,0

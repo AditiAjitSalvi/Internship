@@ -91,18 +91,22 @@ def load_wagon_config(config_path=wagon_config_csv):
         with open(config_path, 'r') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                w_num = row['Wagon Number'].strip()
+                # Handle possible header variations
+                w_num = (row.get('Transporter Name') or row.get('Wagon Number') or "").strip()
+                if not w_num:
+                    continue
+                
                 config[w_num] = {
-                    'sf': float(row['Superfast Speed']),
-                    'f': float(row['Fast Speed']),
-                    's': float(row['Slow Speed']),
-                    'lift_time': float(row['Lift Time']),
-                    'lift_stroke': float(row['Lift Stroke Speed']),
-                    'lower_time': float(row['Lower Time']),
-                    'min_stn': int(row['Minimum Station No']),
-                    'max_stn': int(row['Maximum Station No']),
-                    'basic_pos': int(row['Basic Position']),
-                    'stop_count': int(row['No Of Station To Stop'])
+                    'sf': float(row.get('Superfast Speed', 0)),
+                    'f': float(row.get('Fast Speed', 0)),
+                    's': float(row.get('Slow Speed', 0)),
+                    'lift_time': float(row.get('Lift Time', 0)),
+                    'lift_stroke': float(row.get('Lift Stroke Speed', 5.0)), # Default if missing
+                    'lower_time': float(row.get('Lower Time', 0)),
+                    'min_stn': int(row.get('Minimum Station No', 1)),
+                    'max_stn': int(row.get('Maximum Station No', 200)),
+                    'basic_pos': int(row.get('Basic Position', 0)),
+                    'stop_count': int(row.get('No Of Station To Stop', 0)) # Default if missing
                 }
     except Exception as e:
         print(f"Error loading wagon config: {e}")
