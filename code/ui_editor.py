@@ -99,4 +99,4 @@ if generate_btn:
                 file_name="generated_sequence.csv",
                 mime="text/csv"
             )
-#
+#python -m streamlit run ui_editor.py
