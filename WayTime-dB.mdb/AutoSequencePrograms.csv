@@ -1,651 +1,651 @@
 ProjectID,ProgramNo,InstructionSrNo,Instruction,InstructionValue,WagonNumber,ProgramName
-"001",1,1,"Get From",6,"Wagon 1",
-"001",1,2,"Put On",7,"Wagon 1",
-"001",1,3,"Get From",1,"Wagon 1",
-"001",1,4,"Put On",6,"Wagon 1",
-"001",1,5,"Get From",7,"Wagon 1",
-"001",1,6,"Put On",8,"Wagon 1",
-"001",1,7,"Wait For Sec",10,"Wagon 1",
-"001",1,8,"Get From",8,"Wagon 1",
-"001",1,9,"Put On",9,"Wagon 1",
-"001",1,10,"Wait For Sec",10,"Wagon 1",
-"001",1,11,"Get From",9,"Wagon 1",
-"001",1,12,"Put On",10,"Wagon 1",
-"001",1,13,"Put On",4,"Wagon 1",
-"Prj001",1,21,"Put On",5,"Wagon 1",
-"Prj001",2,2,"Put On",14,"Wagon 2",
-"Prj001",1,2,"Put On",14,"Wagon 2",
-"Prj001",1,3,"Get From",11,"Wagon 2",
-"Prj001",2,5,"Put On",12,"Wagon 2",
-"Prj001",1,5,"Put On",12,"Wagon 2",
-"Prj001",2,7,"Put On",15,"Wagon 2",
-"Prj001",1,7,"Put On",15,"Wagon 2",
-"Prj001",1,10,"Put On",16,"Wagon 2",
-"Prj001",2,10,"Put On",16,"Wagon 2",
-"Prj001",1,13,"Put On ",17,"Wagon 2",
-"Prj001",2,13,"Put On ",17,"Wagon 2",
-"Prj001",1,15,"Put On ",20,"Wagon 2",
-"Prj001",2,15,"Put On ",20,"Wagon 2",
-"Prj001",2,16,"Put On ",18,"Wagon 2",
-"Prj001",1,16,"Put On ",18,"Wagon 2",
-"Prj001",2,19,"Put On",21,"Wagon 2",
-"Prj001",1,19,"Put On",21,"Wagon 2",
-"Prj001",2,20,"Put On",15,"Wagon 2",
-"Prj001",1,20,"Put On",15,"Wagon 2",
-"Shree_Vinayak",1,1,"Get From",1,"Wagon 1",
-"Shree_Vinayak",1,2,"Put On",2,"Wagon 1",
-"Shree_Vinayak",1,4,"Get From",6,"Wagon 1",
-"Shree_Vinayak",1,5,"Put On",1,"Wagon 1",
-"Shree_Vinayak",1,7,"Get From",5,"Wagon 1",
-"Shree_Vinayak",1,10,"Put On",6,"Wagon 1",
-"Shree_Vinayak",1,11,"Wait For Sec",30,"Wagon 1",
-"Shree_Vinayak",1,14,"Put On",7,"Wagon 1",
-"Shree_Vinayak",1,17,"Put On",5,"Wagon 1",
-"Shree_Vinayak",1,18,"Set Int",4,"Wagon 1",
-"Shree_Vinayak",1,21,"Put On",4,"Wagon 1",
-"Shree_Vinayak",1,24,"Put On",3,"Wagon 1",
-"Shree_Vinayak",1,25,"Put On",2,"Wagon 1",
-"Shree_Vinayak",1,3,"Set Int",1,"Wagon 2",
-"Shree_Vinayak",1,4,"Put On",10,"Wagon 2",
-"Shree_Vinayak",1,5,"Wait For Int",2,"Wagon 2",
-"Shree_Vinayak",1,8,"Put On",8,"Wagon 2",
-"Shree_Vinayak",1,9,"Set Int",3,"Wagon 2",
-"Shree_Vinayak",1,10,"Put On",11,"Wagon 2",
-"Shree_Vinayak",1,11,"Wait For Int",9,"Wagon 2",
-"Shree_Vinayak",1,14,"Put On",13,"Wagon 2",
-"Shree_Vinayak",1,16,"Wait For Sec",5,"Wagon 2",
-"Shree_Vinayak",1,17,"Put On",11,"Wagon 2",
-"Shree_Vinayak",1,18,"Wait For Sec",30,"Wagon 2",
-"Shree_Vinayak",1,21,"Put On",12,"Wagon 2",
-"Shree_Vinayak",1,22,"Get From",13,"Wagon 2",
-"Shree_Vinayak",1,25,"Put On",14,"Wagon 2",
-"Shree_Vinayak",1,29,"Put On",6,"Wagon 2",
-"Shree_Vinayak",1,30,"Put On",10,"Wagon 2",
-"Shree_Vinayak",1,1,"Put On",17,"Wagon 3",
-"Shree_Vinayak",1,2,"Wait For Int",7,"Wagon 3",
-"Shree_Vinayak",1,5,"Put On",21,"Wagon 3",
-"Shree_Vinayak",1,8,"Put On",15,"Wagon 3",
-"Shree_Vinayak",1,9,"Get From",14,"Wagon 3",
-"Shree_Vinayak",1,11,"Wait For Int",9,"Wagon 3",
-"Shree_Vinayak",1,12,"Put On",16,"Wagon 3",
-"Shree_Vinayak",1,13,"Wait For Sec",60,"Wagon 3",
-"Shree_Vinayak",1,14,"Get From",16,"Wagon 3",
-"Shree_Vinayak",1,16,"Wait For Int",6,"Wagon 3",
-"Shree_Vinayak",1,17,"Put On",17,"Wagon 3",
-"Shree_Vinayak",1,18,"Wait For Sec",10,"Wagon 3",
-"Shree_Vinayak",1,20,"Wait For Sec",5,"Wagon 3",
-"Shree_Vinayak",1,21,"Put On",18,"Wagon 3",
-"Shree_Vinayak",1,22,"Wait For Sec",10,"Wagon 3",
-"Shree_Vinayak",1,24,"Wait For Sec",5,"Wagon 3",
-"Shree_Vinayak",1,25,"Put On",19,"Wagon 3",
-"Shree_Vinayak",1,27,"Set Int",8,"Wagon 3",
-"Shree_Vinayak",1,28,"Put On",15,"Wagon 3",
-"Shree_Vinayak",1,3,"Put On",35,"Wagon 4",
-"Shree_Vinayak",1,4,"Set Int",7,"Wagon 4",
-"Shree_Vinayak",1,5,"Wait For Sec",10,"Wagon 4",
-"Shree_Vinayak",1,8,"Put On",36,"Wagon 4",
-"Shree_Vinayak",1,9,"Get From",39,"Wagon 4",
-"Shree_Vinayak",1,10,"Put On",35,"Wagon 4",
-"Shree_Vinayak",1,13,"Put On",39,"Wagon 4",
-"Shree_Vinayak",1,14,"Get From",35,"Wagon 4",
-"Shree_Vinayak",1,15,"Set CT Fwd",1,"Wagon 4",
-"Shree_Vinayak",1,18,"Put On",20,"Wagon 4",
-"Shree_Vinayak",1,1,"Get From",40,"Wagon 5",
-"Shree_Vinayak",1,2,"Put On",42,"Wagon 5",
-"Shree_Vinayak",1,4,"Get From",43,"Wagon 5",
-"Shree_Vinayak",1,5,"Put On",40,"Wagon 5",
-"Shree_Vinayak",1,6,"Get From",40,"Wagon 5",
-"Shree_Vinayak",1,9,"Get From",50,"Wagon 5",
-"Shree_Vinayak",1,10,"Put On",43,"Wagon 5",
-"Shree_Vinayak",1,11,"Get From",42,"Wagon 5",
-"Shree_Vinayak",1,12,"Put On",45,"Wagon 5",
-"Shree_Vinayak",1,13,"Get From",45,"Wagon 5",
-"Shree_Vinayak",1,2,"Set Int",9,"Wagon 6",
-"Shree_Vinayak",1,3,"Put On",46,"Wagon 6",
-"Shree_Vinayak",1,5,"Get From",46,"Wagon 6",
-"Shree_Vinayak",1,6,"Put On",48,"Wagon 6",
-"Shree_Vinayak",1,8,"Get From",48,"Wagon 6",
-"Shree_Vinayak",1,9,"Put On",49,"Wagon 6",
-"Shree_Vinayak",1,11,"Get From",49,"Wagon 6",
-"Shree_Vinayak",1,12,"Put On",51,"Wagon 6",
-"Shree_Vinayak",1,14,"Get From",51,"Wagon 6",
-"Shree_Vinayak",1,15,"Put On",52,"Wagon 6",
-"Shree_Vinayak",1,17,"Get From",52,"Wagon 6",
-"Shree_Vinayak",1,18,"Put On",53,"Wagon 6",
-"Shree_Vinayak",1,20,"Get From",53,"Wagon 6",
-"Shree_Vinayak",1,21,"Put On",54,"Wagon 6",
-"Shree_Vinayak",1,22,"Wait For Sec",10,"Wagon 6",
-"Shree_Vinayak",1,25,"Put On",61,"Wagon 6",
-"Shree_Vinayak",1,28,"Put On",50,"Wagon 6",
-"Shree_Vinayak",1,1,"Get From",60,"Wagon 7",
-"Shree_Vinayak",1,2,"Put On",59,"Wagon 7",
-"Shree_Vinayak",1,3,"Get From",66,"Wagon 7",
-"Shree_Vinayak",1,4,"Put On",60,"Wagon 7",
-"Shree_Vinayak",1,5,"Get From",64,"Wagon 7",
-"Shree_Vinayak",1,6,"Put On",66,"Wagon 7",
-"Shree_Vinayak",1,7,"Get From",61,"Wagon 7",
-"Shree_Vinayak",1,8,"Put On",62,"Wagon 7",
-"Shree_Vinayak",1,10,"Get From",62,"Wagon 7",
-"Shree_Vinayak",1,11,"Put On",64,"Wagon 7",
-"Osho",1,1,"Get From",14,"Wagon 2",
-"Osho",1,2,"Put On",13,"Wagon 2",
-"Osho",1,3,"Get From",13,"Wagon 2",
-"Osho",1,4,"Put On",12,"Wagon 2",
-"Osho",1,5,"Get From",12,"Wagon 2",
-"Osho",1,6,"Put On",11,"Wagon 2",
-"Osho",1,7,"Wait For Int",11,"Wagon 2",
-"Osho",1,8,"Set Int",5,"Wagon 2",
-"Osho",1,9,"Put On",19,"Wagon 2",
-"Osho",1,10,"Wait For Int",4,"Wagon 2",
-"Osho",1,11,"Get From",11,"Wagon 2",
-"Osho",1,12,"Put On",10,"Wagon 2",
-"Osho",1,13,"Wait For Sec",10,"Wagon 2",
-"Osho",1,14,"Get From",10,"Wagon 2",
-"Osho",1,15,"Put On",9,"Wagon 2",
-"Osho",1,16,"Wait For Int",6,"Wagon 2",
-"Osho",1,17,"Get From",8,"Wagon 2",
-"Osho",1,18,"Wait For Int",9,"Wagon 2",
-"Osho",1,19,"Get From",6,"Wagon 2",
-"Osho",1,20,"Put On",6,"Wagon 2",
-"Osho",1,21,"Set Int",8,"Wagon 2",
-"Osho",1,22,"Put On",12,"Wagon 2",
-"Osho",1,1,"Get From",18,"Wagon 3",
-"Osho",1,2,"Put On",19,"Wagon 3",
-"Osho",1,3,"Get From",17,"Wagon 3",
-"Osho",1,4,"Put On",18,"Wagon 3",
-"Osho",1,5,"Get From",19,"Wagon 3",
-"Osho",1,6,"Put On",20,"Wagon 3",
-"Osho",1,7,"Set Int",11,"Wagon 3",
-"Osho",1,8,"Get From",21,"Wagon 3",
-"Osho",1,9,"Put On",22,"Wagon 3",
-"Osho",1,10,"Get From",22,"Wagon 3",
-"Osho",1,11,"Put On",23,"Wagon 3",
-"Osho",1,12,"Wait For Int",16,"Wagon 3",
-"Osho",1,13,"Get From",23,"Wagon 3",
-"Osho",1,14,"Put On",24,"Wagon 3",
-"Osho",1,15,"Wait For Int",7,"Wagon 3",
-"Osho",1,16,"Get From",30,"Wagon 3",
-"Osho",1,17,"Set Int",12,"Wagon 3",
-"Osho",1,18,"Put On",16,"Wagon 3",
-"Osho",1,19,"Wait For Sec",36,"Wagon 3",
-"Osho",1,20,"Get From",16,"Wagon 3",
-"Osho",1,21,"Put On",14,"Wagon 3",
-"Osho",1,22,"Put On",20,"Wagon 3",
-"Osho",1,1,"Get From",26,"Wagon 4",
-"Osho",1,2,"Put On",27,"Wagon 4",
-"Osho",1,3,"Wait For Sec",35,"Wagon 4",
-"Osho",1,4,"Get From",27,"Wagon 4",
-"Osho",1,9,"Set Interlock Timer",150,"Wagon 5",
-"Shree_Vinayak",1,12,"Get From",64,"Wagon 7",
-"Shree_Vinayak",1,13,"Get From",63,"Wagon 7",
-"Swastid",1,1,"Get From",8,"Wagon 1",
-"Swastid",1,2,"Put On",9,"Wagon 1",
-"Swastid",1,3,"Get From",6,"Wagon 1",
-"Osho",1,10,"Wait For Int",13,"Wagon 5",
-"Swastid",1,4,"Put On",7,"Wagon 1",
-"Swastid",1,5,"Wait For Sec",9,"Wagon 1",
-"Swastid",1,6,"Get From",7,"Wagon 1",
-"Swastid",1,7,"Put On",8,"Wagon 1",
-"Swastid",1,8,"Get From",2,"Wagon 1",
-"Swastid",1,9,"Put On",6,"Wagon 1",
-"Swastid",1,10,"Wait For Sec",10,"Wagon 1",
-"Swastid",1,11,"Get From",9,"Wagon 1",
-"Swastid",1,12,"Put On",10,"Wagon 1",
-"Swastid",1,13,"Wait For Sec",9,"Wagon 1",
-"Swastid",1,14,"Get From",10,"Wagon 1",
-"Swastid",1,15,"Wait For Int",1,"Wagon 1",
-"Swastid",1,16,"Put On",11,"Wagon 1",
-"Swastid",1,17,"Set Int",5,"Wagon 1",
-"Swastid",1,18,"Get From",1,"Wagon 1",
-"Swastid",1,19,"Put On",2,"Wagon 1",
-"Swastid",1,20,"Put On",8,"Wagon 1",
-"Swastid",1,1,"Get From",12,"Wagon 2",
-"Swastid",1,2,"Put On",13,"Wagon 2",
-"Swastid",1,3,"Wait For Int",9,"Wagon 2",
-"Swastid",1,4,"Get From",16,"Wagon 2",
-"Swastid",1,5,"Put On",17,"Wagon 2",
-"Swastid",1,6,"Wait For Sec",9,"Wagon 2",
-"Swastid",1,7,"Get From",13,"Wagon 2",
-"Swastid",1,8,"Set Int",1,"Wagon 2",
-"Swastid",1,9,"Put On",14,"Wagon 2",
-"Swastid",1,10,"Wait For Sec",9,"Wagon 2",
-"Swastid",1,11,"Get From",14,"Wagon 2",
-"Swastid",1,12,"Set Int",2,"Wagon 2",
-"Swastid",1,13,"Put On",15,"Wagon 2",
-"Swastid",1,14,"Wait For Sec",9,"Wagon 2",
-"Swastid",1,15,"Get From",15,"Wagon 2",
-"Swastid",1,16,"Put On",16,"Wagon 2",
-"Swastid",1,17,"Set Int",13,"Wagon 2",
-"Swastid",1,18,"Wait For Int",5,"Wagon 2",
-"Swastid",1,19,"Get From",11,"Wagon 2",
-"Swastid",1,20,"Put On",12,"Wagon 2",
-"Swastid",1,21,"Put On",15,"Wagon 2",
-"Swastid",1,1,"Get From",23,"Wagon 3",
-"Swastid",1,2,"Put On",24,"Wagon 3",
-"Swastid",1,3,"Get From",17,"Wagon 3",
-"Swastid",1,4,"Put On",18,"Wagon 3",
-"Swastid",1,5,"Wait For Sec",10,"Wagon 3",
-"Osho",1,11,"Get From",38,"Wagon 5",
-"Swastid",1,6,"Get From",18,"Wagon 3",
-"Swastid",1,7,"Set Int",9,"Wagon 3",
-"Swastid",1,8,"Put On",19,"Wagon 3",
-"Swastid",1,9,"Wait For Sec",20,"Wagon 3",
-"Swastid",1,10,"Get From",19,"Wagon 3",
-"Swastid",1,11,"Put On",20,"Wagon 3",
-"Swastid",1,12,"Wait For Sec",20,"Wagon 3",
-"Swastid",1,13,"Get From",20,"Wagon 3",
-"Swastid",1,14,"Put On",21,"Wagon 3",
-"Swastid",1,15,"Wait For Sec",60,"Wagon 3",
-"Swastid",1,16,"Get From",21,"Wagon 3",
-"Swastid",1,17,"Put On",22,"Wagon 3",
-"Swastid",1,18,"Wait For Sec",20,"Wagon 3",
-"Swastid",1,19,"Get From",22,"Wagon 3",
-"Swastid",1,20,"Put On",23,"Wagon 3",
-"Swastid",1,1,"Get From",37,"Wagon 4",
-"Swastid",1,2,"Put On",38,"Wagon 4",
-"Swastid",1,3,"Get From",25,"Wagon 4",
-"Swastid",1,4,"Put On",30,"Wagon 4",
-"Swastid",1,5,"Get From",24,"Wagon 4",
-"Swastid",1,6,"Put On",25,"Wagon 4",
-"Swastid",1,7,"Get From",31,"Wagon 4",
-"Swastid",1,8,"Put On",34,"Wagon 4",
-"Swastid",1,9,"Get From",34,"Wagon 4",
-"Swastid",1,10,"Put On",35,"Wagon 4",
-"Swastid",1,11,"Wait For Sec",30,"Wagon 4",
-"Swastid",1,12,"Get From",35,"Wagon 4",
-"Swastid",1,13,"Put On",36,"Wagon 4",
-"Swastid",1,14,"Get From",36,"Wagon 4",
-"Swastid",1,15,"Put On",37,"Wagon 4",
-"Swastid",1,16,"Get From",30,"Wagon 4",
-"Swastid",1,17,"Put On",31,"Wagon 4",
-"Swastid",1,18,"Put On",36,"Wagon 4",
-"Swastid",1,1,"Get From",41,"Wagon 5",
-"Swastid",1,2,"Put On",42,"Wagon 5",
-"Swastid",1,3,"Wait For Sec",9,"Wagon 5",
-"Swastid",1,4,"Get From",42,"Wagon 5",
-"Swastid",1,5,"Put On",43,"Wagon 5",
-"Swastid",1,6,"Wait For Sec",9,"Wagon 5",
-"Swastid",1,7,"Get From",43,"Wagon 5",
-"Swastid",1,8,"Put On",44,"Wagon 5",
-"Swastid",1,9,"Wait For Sec",9,"Wagon 5",
-"Swastid",1,10,"Get From",44,"Wagon 5",
-"Swastid",1,11,"Put On",45,"Wagon 5",
-"Swastid",1,12,"Wait For Sec",9,"Wagon 5",
-"Swastid",1,13,"Get From",45,"Wagon 5",
-"Swastid",1,14,"Put On",46,"Wagon 5",
-"Swastid",1,15,"Wait For Sec",5,"Wagon 5",
-"Swastid",1,16,"Get From",47,"Wagon 5",
-"Swastid",1,17,"Put On",48,"Wagon 5",
-"Swastid",1,18,"Get From",46,"Wagon 5",
-"Swastid",1,19,"Wait For Sec",5,"Wagon 5",
-"Swastid",1,20,"Put On",47,"Wagon 5",
-"Swastid",1,21,"Get From",38,"Wagon 5",
-"Swastid",1,22,"Put On",39,"Wagon 5",
-"Swastid",1,23,"Get From",39,"Wagon 5",
-"Swastid",1,24,"Put On",40,"Wagon 5",
-"Swastid",1,25,"Wait For Sec",9,"Wagon 5",
-"Swastid",1,26,"Get From",40,"Wagon 5",
-"Swastid",1,27,"Put On",41,"Wagon 5",
-"Prius",1,1,"Get From",14,"Wagon 1","Program 1"
-"Prius",1,2,"Put On",18,"Wagon 1","Program 1"
-"Osho",1,14,"Wait Interlock Timer",150,"Wagon 5",
-"Prius",1,3,"Get From",1,"Wagon 1","Program 1"
-"Prius",1,4,"Put On",2,"Wagon 1","Program 1"
-"Prius",1,5,"Get From",10,"Wagon 1","Program 1"
-"Prius",1,6,"Put On",11,"Wagon 1","Program 1"
-"Prius",1,7,"Wait For Sec",10,"Wagon 1","Program 1"
-"Prius",1,8,"Get From",11,"Wagon 1","Program 1"
-"Prius",1,9,"Put On",12,"Wagon 1","Program 1"
-"Prius",1,10,"Wait For Sec",10,"Wagon 1","Program 1"
-"Prius",1,11,"Get From",12,"Wagon 1","Program 1"
-"Prius",1,12,"Put On",13,"Wagon 1","Program 1"
-"Prius",1,13,"Get From",3,"Wagon 1","Program 1"
-"Prius",1,14,"Put On",5,"Wagon 1","Program 1"
-"Prius",1,15,"Get From",2,"Wagon 1","Program 1"
-"Prius",1,16,"Put On",3,"Wagon 1","Program 1"
-"Prius",1,17,"Get From",5,"Wagon 1","Program 1"
-"Prius",1,18,"Put On",6,"Wagon 1","Program 1"
-"Prius",1,19,"Wait For Sec",10,"Wagon 1","Program 1"
-"Prius",1,20,"Get From",6,"Wagon 1","Program 1"
-"Prius",1,21,"Put On",7,"Wagon 1","Program 1"
-"Prius",1,22,"Wait For Sec",10,"Wagon 1","Program 1"
-"Prius",1,23,"Get From",7,"Wagon 1","Program 1"
-"Prius",1,24,"Put On",8,"Wagon 1","Program 1"
-"Prius",1,25,"Get From",13,"Wagon 1","Program 1"
-"Prius",1,26,"Put On",9,"Wagon 1","Program 1"
-"Prius",1,27,"Wait For Sec",10,"Wagon 1","Program 1"
-"Prius",1,28,"Get From",9,"Wagon 1","Program 1"
-"Prius",1,29,"Put On",10,"Wagon 1","Program 1"
-"Prius",1,1,"Get From",26,"Wagon 2","Program 1"
-"Prius",1,2,"Put On",28,"Wagon 2","Program 1"
-"Prius",1,3,"Get From",25,"Wagon 2","Program 1"
-"Prius",1,4,"Put On",26,"Wagon 2","Program 1"
-"Prius",1,5,"Get From",28,"Wagon 2","Program 1"
-"Prius",1,6,"Put On",29,"Wagon 2","Program 1"
-"Prius",1,7,"Wait For Sec",10,"Wagon 2","Program 1"
-"Prius",1,8,"Get From",29,"Wagon 2","Program 1"
-"Prius",1,9,"Put On",30,"Wagon 2","Program 1"
-"Prius",1,10,"Get From",18,"Wagon 2","Program 1"
-"Prius",1,11,"Put On",19,"Wagon 2","Program 1"
-"Prius",1,12,"Wait For Sec",10,"Wagon 2","Program 1"
-"Prius",1,13,"Get From",19,"Wagon 2","Program 1"
-"Prius",1,14,"Put On",20,"Wagon 2","Program 1"
-"Prius",1,15,"Wait For Sec",10,"Wagon 2","Program 1"
-"Prius",1,16,"Get From",20,"Wagon 2","Program 1"
-"Prius",1,17,"Put On",21,"Wagon 2","Program 1"
-"Prius",1,18,"Wait For Sec",10,"Wagon 2","Program 1"
-"Prius",1,19,"Get From",21,"Wagon 2","Program 1"
-"Prius",1,20,"Put On",22,"Wagon 2","Program 1"
-"Prius",1,21,"Wait For Sec",10,"Wagon 2","Program 1"
-"Prius",1,22,"Get From",22,"Wagon 2","Program 1"
-"Prius",1,23,"Put On",25,"Wagon 2","Program 1"
-"Prius",1,1,"Get From",30,"Wagon 3","Program 1"
-"Osho",1,15,"Get From",40,"Wagon 5",
-"Prius",1,2,"Put On",32,"Wagon 3","Program 1"
-"Prius",1,3,"Get From",36,"Wagon 3","Program 1"
-"Prius",1,4,"Put On",37,"Wagon 3","Program 1"
-"Prius",1,5,"Get From",32,"Wagon 3","Program 1"
-"Prius",1,6,"Put On",33,"Wagon 3","Program 1"
-"Prius",1,7,"Get From",37,"Wagon 3","Program 1"
-"Prius",1,8,"Put On",38,"Wagon 3","Program 1"
-"Prius",1,9,"Get From",33,"Wagon 3","Program 1"
-"Prius",1,10,"Put On",34,"Wagon 3","Program 1"
-"Prius",1,11,"Get From",35,"Wagon 3","Program 1"
-"Prius",1,12,"Put On",36,"Wagon 3","Program 1"
-"Prius",1,13,"Get From",34,"Wagon 3","Program 1"
-"Prius",1,14,"Put On",35,"Wagon 3","Program 1"
-"Prius",1,15,"Get From",38,"Wagon 3","Program 1"
-"Prius",1,16,"Put On",39,"Wagon 3","Program 1"
-"Prius",1,17,"Wait For Sec",10,"Wagon 3","Program 1"
-"Prius",1,18,"Get From",39,"Wagon 3","Program 1"
-"Prius",1,19,"Put On",40,"Wagon 3","Program 1"
-"Prius",1,20,"Wait For Sec",10,"Wagon 3","Program 1"
-"Prius",1,21,"Get From",40,"Wagon 3","Program 1"
-"Prius",1,22,"Put On",41,"Wagon 3","Program 1"
-"Prius",1,23,"Wait For Sec",10,"Wagon 3","Program 1"
-"Prius",1,24,"Get From",41,"Wagon 3","Program 1"
-"Prius",1,25,"Put On",42,"Wagon 3","Program 1"
-"Prius",1,26,"Wait For Sec",10,"Wagon 3","Program 1"
-"Prius",1,27,"Get From",42,"Wagon 3","Program 1"
-"Prius",1,28,"Put On",43,"Wagon 3","Program 1"
-"Prius",1,29,"Wait For Sec",10,"Wagon 3","Program 1"
-"Prius",1,30,"Get From",43,"Wagon 3","Program 1"
-"Prius",1,31,"Put On",44,"Wagon 3","Program 1"
-"Prius",1,32,"Put On",31,"Wagon 3","Program 1"
-"Prius",1,1,"Get From",52,"Wagon 4","Program 1"
-"Prius",1,2,"Put On",53,"Wagon 4","Program 1"
-"Prius",1,3,"Get From",44,"Wagon 4","Program 1"
-"Prius",1,4,"Put On",45,"Wagon 4","Program 1"
-"Prius",1,5,"Wait For Sec",10,"Wagon 4","Program 1"
-"Prius",1,6,"Get From",45,"Wagon 4","Program 1"
-"Prius",1,7,"Put On",46,"Wagon 4","Program 1"
-"Prius",1,8,"Get From",53,"Wagon 4","Program 1"
-"Prius",1,9,"Put On",55,"Wagon 4","Program 1"
-"Prius",1,10,"Get From",57,"Wagon 4","Program 1"
-"Prius",1,11,"Put On",58,"Wagon 4","Program 1"
-"Prius",1,12,"Get From",55,"Wagon 4","Program 1"
-"Prius",1,13,"Put On",57,"Wagon 4","Program 1"
-"Prius",1,14,"Get From",58,"Wagon 4","Program 1"
-"Prius",1,15,"Put On",59,"Wagon 4","Program 1"
-"Prius",1,16,"Wait For Sec",10,"Wagon 4","Program 1"
-"Prius",1,17,"Get From",59,"Wagon 4","Program 1"
-"Prius",1,18,"Put On",60,"Wagon 4","Program 1"
-"Prius",1,19,"Get From",46,"Wagon 4","Program 1"
-"Prius",1,20,"Put On",47,"Wagon 4","Program 1"
-"Prius",1,21,"Wait For Sec",10,"Wagon 4","Program 1"
-"Osho",1,16,"Put On",38,"Wagon 5",
-"Prius",1,22,"Get From",47,"Wagon 4","Program 1"
-"Prius",1,23,"Put On",48,"Wagon 4","Program 1"
-"Prius",1,24,"Wait For Sec",10,"Wagon 4","Program 1"
-"Prius",1,25,"Get From",48,"Wagon 4","Program 1"
-"Prius",1,26,"Put On",49,"Wagon 4","Program 1"
-"Prius",1,27,"Wait For Sec",10,"Wagon 4","Program 1"
-"Prius",1,28,"Get From",49,"Wagon 4","Program 1"
-"Prius",1,29,"Put On",50,"Wagon 4","Program 1"
-"Prius",1,30,"Wait For Sec",10,"Wagon 4","Program 1"
-"Prius",1,31,"Get From",50,"Wagon 4","Program 1"
-"Prius",1,32,"Put On",51,"Wagon 4","Program 1"
-"Prius",1,33,"Wait For Sec",10,"Wagon 4","Program 1"
-"Prius",1,34,"Get From",51,"Wagon 4","Program 1"
-"Prius",1,35,"Put On",52,"Wagon 4","Program 1"
-"Bhagwan",1,1,"Get From",6,"Wagon 1","Program 1"
-"Bhagwan",1,2,"Put On",7,"Wagon 1","Program 1"
-"Bhagwan",1,3,"Get From",7,"Wagon 1","Program 1"
-"Bhagwan",1,4,"Put On",8,"Wagon 1","Program 1"
-"Bhagwan",1,5,"Get From",8,"Wagon 1","Program 1"
-"Bhagwan",1,6,"Put On",9,"Wagon 1","Program 1"
-"Bhagwan",1,7,"Set Int",1,"Wagon 1","Program 1"
-"Bhagwan",1,8,"Get From",3,"Wagon 1","Program 1"
-"Bhagwan",1,9,"Put On",5,"Wagon 1","Program 1"
-"Bhagwan",1,10,"Get From",5,"Wagon 1","Program 1"
-"Bhagwan",1,11,"Put On",6,"Wagon 1","Program 1"
-"Bhagwan",1,12,"Get From",1,"Wagon 1","Program 1"
-"Bhagwan",1,13,"Put On",3,"Wagon 1","Program 1"
-"Bhagwan",1,14,"Wait For Int",4,"Wagon 1","Program 1"
-"Bhagwan",1,15,"Get From",8,"Wagon 1","Program 1"
-"Bhagwan",1,16,"Set Int",5,"Wagon 1","Program 1"
-"Bhagwan",1,17,"Put On",1,"Wagon 1","Program 1"
-"Bhagwan",1,1,"Get From",13,"Wagon 2","Program 1"
-"Bhagwan",1,2,"Put On",14,"Wagon 2","Program 1"
-"Bhagwan",1,3,"Get From",12,"Wagon 2","Program 1"
-"Bhagwan",1,4,"Put On",13,"Wagon 2","Program 1"
-"Bhagwan",1,5,"Get From",14,"Wagon 2","Program 1"
-"Bhagwan",1,6,"Put On",15,"Wagon 2","Program 1"
-"Bhagwan",1,7,"Get From",15,"Wagon 2","Program 1"
-"Bhagwan",1,8,"Put On",16,"Wagon 2","Program 1"
-"Bhagwan",1,9,"Set Int",2,"Wagon 2","Program 1"
-"Bhagwan",1,10,"Put On",12,"Wagon 2","Program 1"
-"Bhagwan",1,11,"Wait For Int",1,"Wagon 2","Program 1"
-"Bhagwan",1,12,"Wait For Int",3,"Wagon 2","Program 1"
-"Bhagwan",1,13,"Get From",14,"Wagon 2","Program 1"
-"Bhagwan",1,14,"Put On",8,"Wagon 2","Program 1"
-"Bhagwan",1,15,"Set Int",4,"Wagon 2","Program 1"
-"Bhagwan",1,16,"Put On",10,"Wagon 2","Program 1"
-"Bhagwan",1,17,"Wait For Int",5,"Wagon 2","Program 1"
-"Bhagwan",1,18,"Get From",9,"Wagon 2","Program 1"
-"Bhagwan",1,19,"Put On",11,"Wagon 2","Program 1"
-"Bhagwan",1,20,"Get From",11,"Wagon 2","Program 1"
-"Bhagwan",1,21,"Put On",12,"Wagon 2","Program 1"
-"Prj001",1,6,"Get From",2,"Wagon 1",
-"Bhagwan",1,2,"Get From",20,"Wagon 3","Program 1"
-"Bhagwan",1,3,"Put On",18,"Wagon 3","Program 1"
-"Bhagwan",1,5,"Get From",19,"Wagon 3","Program 1"
-"Bhagwan",1,6,"Put On",20,"Wagon 3","Program 1"
-"Bhagwan",1,7,"Put On",19,"Wagon 3","Program 1"
-"Bhagwan",1,8,"Wait For Int",2,"Wagon 3","Program 1"
-"Bhagwan",1,9,"Get From",18,"Wagon 3","Program 1"
-"Bhagwan",1,10,"Put On",14,"Wagon 3","Program 1"
-"Bhagwan",1,11,"Set Int",3,"Wagon 3","Program 1"
-"Bhagwan",1,12,"Put On",16,"Wagon 3","Program 1"
-"Bhagwan",1,13,"Get From",16,"Wagon 3","Program 1"
-"Bhagwan",1,14,"Put On",17,"Wagon 3","Program 1"
-"Bhagwan",1,15,"Get From",17,"Wagon 3","Program 1"
-"Bhagwan",1,16,"Put On",18,"Wagon 3","Program 1"
-"Bhagwan",1,17,"Get From",18,"Wagon 3","Program 1"
-"Bhagwan",1,18,"Put On",19,"Wagon 3","Program 1"
-"Bhagwan",1,1,"Set CT Rev",1,"Wagon 3","Program 1"
-"Bhagwan",1,4,"Set CT Rev",1,"Wagon 3","Program 1"
-"Prj001",1,7,"Set CT Fwd",1,"Wagon 1",
-"Prj001",1,15,"Wait For Sec",30,"Wagon 1",
-"Prj001",1,18,"Wait For Sec",30,"Wagon 1",
-"Prj001",1,19,"Get From",10,"Wagon 1",
-"Prj001",1,22,"Set CT Rev",2,"Wagon 1",
-"Prj001",1,1,"Get From",12,"Wagon 2",
-"Prj001",2,1,"Get From",12,"Wagon 2",
-"Prj001",2,3,"Get From",11,"Wagon 2",
-"Prj001",2,4,"Set CT Rev",2,"Wagon 2",
-"Prj001",2,6,"Get From",14,"Wagon 2",
-"Prj001",1,6,"Get From",14,"Wagon 2",
-"Prj001",2,8,"Wait For Sec",30,"Wagon 2",
-"Prj001",1,8,"Wait For Sec",30,"Wagon 2",
-"Prj001",2,9,"Get From",15,"Wagon 2",
-"Prj001",1,9,"Get From",15,"Wagon 2",
-"Osho",1,1,"Get From",9,"Wagon 1",
-"Osho",1,2,"Put On",8,"Wagon 1",
-"Osho",1,3,"Get From",4,"Wagon 1",
-"Osho",1,4,"Put On",3,"Wagon 1",
-"Osho",1,5,"Get From",1,"Wagon 1",
-"Osho",1,6,"Get From",9,"Wagon 1",
-"Osho",1,7,"Wait For Int",5,"Wagon 1",
-"Osho",1,8,"Put On",17,"Wagon 1",
-"Osho",1,9,"Set Int",4,"Wagon 1",
-"Osho",1,10,"Get From",3,"Wagon 1",
-"Osho",1,11,"Put On",1,"Wagon 1",
-"Osho",1,12,"Get From",5,"Wagon 1",
-"Osho",1,13,"Put On",4,"Wagon 1",
-"Osho",1,14,"Get From",2,"Wagon 1",
-"Osho",1,15,"Put On",5,"Wagon 1",
-"Osho",1,16,"Set Int",6,"Wagon 1",
-"Osho",1,17,"Get From",6,"Wagon 1",
-"Osho",1,18,"Set Int",9,"Wagon 1",
-"Osho",1,19,"Put On",2,"Wagon 1",
-"Osho",1,20,"Wait For Int",8,"Wagon 1",
-"Osho",1,21,"Put On",9,"Wagon 1",
-"p1",1,1,"Get From",1,"Wagon 1",
-"p1",1,2,"Put On",2,"Wagon 1",
-"Osho",1,5,"Set Int",1,"Wagon 4",
-"Osho",1,6,"Get From",28,"Wagon 4",
-"Osho",1,7,"Put On",29,"Wagon 4",
-"Osho",1,8,"Set Int",2,"Wagon 4",
-"Osho",1,9,"Get From",24,"Wagon 4",
-"Osho",1,10,"Put On",25,"Wagon 4",
-"Osho",1,11,"Set Int",16,"Wagon 4",
-"Osho",1,12,"Put On",26,"Wagon 4",
-"Osho",1,13,"Wait For Int",3,"Wagon 4",
-"Osho",1,14,"Get From",32,"Wagon 4",
-"Osho",1,15,"Put On",31,"Wagon 4",
-"Osho",1,16,"Get From",31,"Wagon 4",
-"Osho",1,17,"Put On",30,"Wagon 4",
-"Osho",1,18,"Set Int",7,"Wagon 4",
-"Osho",1,19,"Put On",33,"Wagon 4",
-"Osho",1,20,"Set Int",13,"Wagon 4",
-"Osho",1,21,"Wait For Int",12,"Wagon 4",
-"Osho",1,22,"Get From",20,"Wagon 4",
-"Osho",1,23,"Put On",21,"Wagon 4",
-"Osho",1,24,"Get From",25,"Wagon 4",
-"Osho",1,25,"Put On",26,"Wagon 4",
-"Osho",1,1,"Wait For Int",1,"Wagon 5",
-"Osho",1,2,"Get From",33,"Wagon 5",
-"Osho",1,3,"Put On",32,"Wagon 5",
-"Osho",1,4,"Wait For Int",2,"Wagon 5",
-"Osho",1,5,"Get From",29,"Wagon 5",
-"Osho",1,6,"Set Int",3,"Wagon 5",
-"Osho",1,7,"Put On",40,"Wagon 5",
-"Osho",1,8,"Wait For Sec",50,"Wagon 5",
-"Osho",1,12,"Put On",33,"Wagon 5",
-"Osho",1,13,"Put On",40,"Wagon 5",
-"Osho",1,17,"Put On",35,"Wagon 5",
-"p1",1,3,"Wait For Int",1,"Wagon 1",
-"A1001",1,1,"Get From",1,"Wagon 1",
-"A1001",1,2,"Put On",5,"Wagon 1",
-"A1001",1,3,"Get From",2,"Wagon 1",
-"A1001",1,4,"Put On",5,"Wagon 1",
-"A1001",1,5,"Get From",3,"Wagon 1",
-"A1001",1,6,"Put On",7,"Wagon 1",
-"A1001",1,7,"Get From",4,"Wagon 1",
-"A1001",1,8,"Put On",11,"Wagon 1",
-"A1001",1,9,"Get From",5,"Wagon 1",
-"A1001",1,10,"Put On",8,"Wagon 1",
-"p1",1,4,"Get From",6,"Wagon 1",
-"p1",1,7,"Wait For Int",3,"Wagon 1",
-"p1",1,11,"Get From",6,"Wagon 1",
-"p1",1,5,"Set Int",2,"Wagon 1",
-"p1",1,6,"Put On",1,"Wagon 1",
-"p1",1,8,"Get From",5,"Wagon 1",
-"p1",1,9,"Put On",6,"Wagon 1",
-"p1",1,10,"Wait For Sec",30,"Wagon 1",
-"p1",1,13,"Put On",7,"Wagon 1",
-"p1",1,16,"Put On",5,"Wagon 1",
-"p1",1,17,"Set Int",4,"Wagon 1",
-"p1",1,20,"Put On",4,"Wagon 1",
-"p1",1,23,"Put On",3,"Wagon 1",
-"p1",1,24,"Put On",2,"Wagon 1",
-"Prj001",1,1,"Get From",6,"Wagon 1",
-"Prj001",1,3,"Get From",2,"Wagon 1",
-"Prj001",1,2,"Put On",7,"Wagon 1",
-"Prj001",3,4,"Put On",7,"Wagon 1",
-"Prj001",1,4,"Get From",5,"Wagon 1",
-"Prj001",1,5,"Put On ",8,"Wagon 1",
-"Prj001",1,8,"Put On",5,"Wagon 1",
-"Prj001",1,9,"Get From",7,"Wagon 1",
-"Prj001",1,10,"Put On",8,"Wagon 1",
-"Prj001",1,11,"Get From",2,"Wagon 1",
-"Prj001",1,12,"Put On ",8,"Wagon 1",
-"Prj001",1,13,"Get From",8,"Wagon 1",
-"Prj001",1,14,"Put On ",9,"Wagon 1",
-"Prj001",1,16,"Get From",9,"Wagon 1",
-"Prj001",1,17,"Put On",10,"Wagon 1",
-"Prj001",1,20,"Put On",11,"Wagon 1",
-"p1",1,12,"Wait For Sec",5,"Wagon 1",
-"p1",1,14,"Get From",4,"Wagon 1",
-"p1",1,15,"Wait For Sec",5,"Wagon 1",
-"p1",1,18,"Get From",3,"Wagon 1",
-"p1",1,19,"Wait For Sec",5,"Wagon 1",
-"p1",1,21,"Get From",2,"Wagon 1",
-"p1",1,22,"Wait For Sec",5,"Wagon 1",
-"Prj001",2,11,"Wait For Sec",45,"Wagon 2",
-"Prj001",1,11,"Wait For Sec",45,"Wagon 2",
-"Prj001",2,12,"Get From",16,"Wagon 2",
-"Prj001",1,12,"Get From",16,"Wagon 2",
-"Prj001",1,14,"Get From",21,"Wagon 2",
-"Prj001",2,14,"Get From",21,"Wagon 2",
-"Prj001",2,17,"Set CT Rev",1,"Wagon 2",
-"Prj001",1,18,"Get From",18,"Wagon 2",
-"Prj001",2,18,"Get From",18,"Wagon 2",
-"Shree_Vinayak",1,3,"Wait For Int",1,"Wagon 1",
-"Shree_Vinayak",1,6,"Wait For Int",3,"Wagon 1",
-"Shree_Vinayak",1,12,"Get From",6,"Wagon 1",
-"Shree_Vinayak",1,13,"Wait For Sec",5,"Wagon 1",
-"Shree_Vinayak",1,15,"Get From",4,"Wagon 1",
-"Shree_Vinayak",1,16,"Wait For Sec",5,"Wagon 1",
-"Shree_Vinayak",1,19,"Get From",3,"Wagon 1",
-"Shree_Vinayak",1,20,"Wait For Sec",5,"Wagon 1",
-"Shree_Vinayak",1,22,"Get From",2,"Wagon 1",
-"Shree_Vinayak",1,23,"Wait For Sec",5,"Wagon 1",
-"Shree_Vinayak",1,1,"Get From",8,"Wagon 2",
-"Shree_Vinayak",1,2,"Wait For Sec",5,"Wagon 2",
-"Shree_Vinayak",1,6,"Get From",7,"Wagon 2",
-"Shree_Vinayak",1,7,"Wait For Sec",5,"Wagon 2",
-"Shree_Vinayak",1,12,"Get From",12,"Wagon 2",
-"Shree_Vinayak",1,13,"Wait For Sec",5,"Wagon 2",
-"Shree_Vinayak",1,15,"Get From",10,"Wagon 2",
-"Shree_Vinayak",1,19,"Get From",11,"Wagon 2",
-"Shree_Vinayak",1,20,"Wait For Sec",5,"Wagon 2",
-"Shree_Vinayak",1,23,"Wait For Sec",5,"Wagon 2",
-"Shree_Vinayak",1,24,"Wait For Int",6,"Wagon 2",
-"Shree_Vinayak",1,26,"Get From",15,"Wagon 2",
-"Shree_Vinayak",1,27,"Wait For Int",4,"Wagon 2",
-"Shree_Vinayak",1,28,"Set Int",5,"Wagon 2",
-"Shree_Vinayak",1,3,"Get From",19,"Wagon 3",
-"Shree_Vinayak",1,4,"Wait For Sec",5,"Wagon 3",
-"Shree_Vinayak",1,6,"Get From",20,"Wagon 3",
-"Shree_Vinayak",1,7,"Wait For Int",10,"Wagon 3",
-"Shree_Vinayak",1,10,"Wait For Sec",5,"Wagon 3",
-"Shree_Vinayak",1,15,"Wait For Sec",5,"Wagon 3",
-"Shree_Vinayak",1,19,"Get From",17,"Wagon 3",
-"Shree_Vinayak",1,23,"Get From",18,"Wagon 3",
-"Shree_Vinayak",1,26,"Wait For Int",5,"Wagon 3",
-"Shree_Vinayak",1,1,"Get From",21,"Wagon 4",
-"Shree_Vinayak",1,2,"Wait For Sec",10,"Wagon 4",
-"Shree_Vinayak",1,6,"Get From",35,"Wagon 4",
-"Shree_Vinayak",1,7,"Wait For Sec",5,"Wagon 4",
-"Shree_Vinayak",1,11,"Get From",36,"Wagon 4",
-"Shree_Vinayak",1,12,"Wait For Sec",5,"Wagon 4",
-"Shree_Vinayak",1,16,"Get From",23,"Wagon 4",
-"Shree_Vinayak",1,17,"Wait For Int",8,"Wagon 4",
-"Shree_Vinayak",1,3,"Wait For Int",9,"Wagon 5",
-"Shree_Vinayak",1,7,"Set CT Rev",1,"Wagon 5",
-"Shree_Vinayak",1,8,"Wait For Int",10,"Wagon 5",
-"Shree_Vinayak",1,14,"Get From",42,"Wagon 5",
-"Shree_Vinayak",1,1,"Get From",45,"Wagon 6",
-"Shree_Vinayak",1,4,"Wait For Sec",30,"Wagon 6",
-"Shree_Vinayak",1,7,"Wait For Sec",10,"Wagon 6",
-"Shree_Vinayak",1,10,"Wait For Sec",10,"Wagon 6",
-"Shree_Vinayak",1,13,"Wait For Sec",30,"Wagon 6",
-"Shree_Vinayak",1,16,"Wait For Sec",10,"Wagon 6",
-"Shree_Vinayak",1,19,"Wait For Sec",10,"Wagon 6",
-"Shree_Vinayak",1,23,"Get From",54,"Wagon 6",
-"Shree_Vinayak",1,24,"Wait For Int",11,"Wagon 6",
-"Shree_Vinayak",1,26,"Get From",59,"Wagon 6",
-"Shree_Vinayak",1,27,"Wait For Int",10,"Wagon 6",
-"Shree_Vinayak",1,9,"Wait For Sec",30,"Wagon 7",
+1,1,1,Get From,6,Wagon 1,
+1,1,2,Put On,7,Wagon 1,
+1,1,3,Get From,1,Wagon 1,
+1,1,4,Put On,6,Wagon 1,
+1,1,5,Get From,7,Wagon 1,
+1,1,6,Put On,8,Wagon 1,
+1,1,7,Wait For Sec,10,Wagon 1,
+1,1,8,Get From,8,Wagon 1,
+1,1,9,Put On,9,Wagon 1,
+1,1,10,Wait For Sec,10,Wagon 1,
+1,1,11,Get From,9,Wagon 1,
+1,1,12,Put On,10,Wagon 1,
+1,1,13,Put On,4,Wagon 1,
+Prj001,1,21,Put On,5,Wagon 1,
+Prj001,2,2,Put On,14,Wagon 2,
+Prj001,1,2,Put On,14,Wagon 2,
+Prj001,1,3,Get From,11,Wagon 2,
+Prj001,2,5,Put On,12,Wagon 2,
+Prj001,1,5,Put On,12,Wagon 2,
+Prj001,2,7,Put On,15,Wagon 2,
+Prj001,1,7,Put On,15,Wagon 2,
+Prj001,1,10,Put On,16,Wagon 2,
+Prj001,2,10,Put On,16,Wagon 2,
+Prj001,1,13,Put On ,17,Wagon 2,
+Prj001,2,13,Put On ,17,Wagon 2,
+Prj001,1,15,Put On ,20,Wagon 2,
+Prj001,2,15,Put On ,20,Wagon 2,
+Prj001,2,16,Put On ,18,Wagon 2,
+Prj001,1,16,Put On ,18,Wagon 2,
+Prj001,2,19,Put On,21,Wagon 2,
+Prj001,1,19,Put On,21,Wagon 2,
+Prj001,2,20,Put On,15,Wagon 2,
+Prj001,1,20,Put On,15,Wagon 2,
+Shree_Vinayak,1,1,Get From,1,Wagon 1,
+Shree_Vinayak,1,2,Put On,2,Wagon 1,
+Shree_Vinayak,1,4,Get From,6,Wagon 1,
+Shree_Vinayak,1,5,Put On,1,Wagon 1,
+Shree_Vinayak,1,7,Get From,5,Wagon 1,
+Shree_Vinayak,1,10,Put On,6,Wagon 1,
+Shree_Vinayak,1,11,Wait For Sec,30,Wagon 1,
+Shree_Vinayak,1,14,Put On,7,Wagon 1,
+Shree_Vinayak,1,17,Put On,5,Wagon 1,
+Shree_Vinayak,1,18,Set Int,4,Wagon 1,
+Shree_Vinayak,1,21,Put On,4,Wagon 1,
+Shree_Vinayak,1,24,Put On,3,Wagon 1,
+Shree_Vinayak,1,25,Put On,2,Wagon 1,
+Shree_Vinayak,1,3,Set Int,1,Wagon 2,
+Shree_Vinayak,1,4,Put On,10,Wagon 2,
+Shree_Vinayak,1,5,Wait For Int,2,Wagon 2,
+Shree_Vinayak,1,8,Put On,8,Wagon 2,
+Shree_Vinayak,1,9,Set Int,3,Wagon 2,
+Shree_Vinayak,1,10,Put On,11,Wagon 2,
+Shree_Vinayak,1,11,Wait For Int,9,Wagon 2,
+Shree_Vinayak,1,14,Put On,13,Wagon 2,
+Shree_Vinayak,1,16,Wait For Sec,5,Wagon 2,
+Shree_Vinayak,1,17,Put On,11,Wagon 2,
+Shree_Vinayak,1,18,Wait For Sec,30,Wagon 2,
+Shree_Vinayak,1,21,Put On,12,Wagon 2,
+Shree_Vinayak,1,22,Get From,13,Wagon 2,
+Shree_Vinayak,1,25,Put On,14,Wagon 2,
+Shree_Vinayak,1,29,Put On,6,Wagon 2,
+Shree_Vinayak,1,30,Put On,10,Wagon 2,
+Shree_Vinayak,1,1,Put On,17,Wagon 3,
+Shree_Vinayak,1,2,Wait For Int,7,Wagon 3,
+Shree_Vinayak,1,5,Put On,21,Wagon 3,
+Shree_Vinayak,1,8,Put On,15,Wagon 3,
+Shree_Vinayak,1,9,Get From,14,Wagon 3,
+Shree_Vinayak,1,11,Wait For Int,9,Wagon 3,
+Shree_Vinayak,1,12,Put On,16,Wagon 3,
+Shree_Vinayak,1,13,Wait For Sec,60,Wagon 3,
+Shree_Vinayak,1,14,Get From,16,Wagon 3,
+Shree_Vinayak,1,16,Wait For Int,6,Wagon 3,
+Shree_Vinayak,1,17,Put On,17,Wagon 3,
+Shree_Vinayak,1,18,Wait For Sec,10,Wagon 3,
+Shree_Vinayak,1,20,Wait For Sec,5,Wagon 3,
+Shree_Vinayak,1,21,Put On,18,Wagon 3,
+Shree_Vinayak,1,22,Wait For Sec,10,Wagon 3,
+Shree_Vinayak,1,24,Wait For Sec,5,Wagon 3,
+Shree_Vinayak,1,25,Put On,19,Wagon 3,
+Shree_Vinayak,1,27,Set Int,8,Wagon 3,
+Shree_Vinayak,1,28,Put On,15,Wagon 3,
+Shree_Vinayak,1,3,Put On,35,Wagon 4,
+Shree_Vinayak,1,4,Set Int,7,Wagon 4,
+Shree_Vinayak,1,5,Wait For Sec,10,Wagon 4,
+Shree_Vinayak,1,8,Put On,36,Wagon 4,
+Shree_Vinayak,1,9,Get From,39,Wagon 4,
+Shree_Vinayak,1,10,Put On,35,Wagon 4,
+Shree_Vinayak,1,13,Put On,39,Wagon 4,
+Shree_Vinayak,1,14,Get From,35,Wagon 4,
+Shree_Vinayak,1,15,Set CT Fwd,1,Wagon 4,
+Shree_Vinayak,1,18,Put On,20,Wagon 4,
+Shree_Vinayak,1,1,Get From,40,Wagon 5,
+Shree_Vinayak,1,2,Put On,42,Wagon 5,
+Shree_Vinayak,1,4,Get From,43,Wagon 5,
+Shree_Vinayak,1,5,Put On,40,Wagon 5,
+Shree_Vinayak,1,6,Get From,40,Wagon 5,
+Shree_Vinayak,1,9,Get From,50,Wagon 5,
+Shree_Vinayak,1,10,Put On,43,Wagon 5,
+Shree_Vinayak,1,11,Get From,42,Wagon 5,
+Shree_Vinayak,1,12,Put On,45,Wagon 5,
+Shree_Vinayak,1,13,Get From,45,Wagon 5,
+Shree_Vinayak,1,2,Set Int,9,Wagon 6,
+Shree_Vinayak,1,3,Put On,46,Wagon 6,
+Shree_Vinayak,1,5,Get From,46,Wagon 6,
+Shree_Vinayak,1,6,Put On,48,Wagon 6,
+Shree_Vinayak,1,8,Get From,48,Wagon 6,
+Shree_Vinayak,1,9,Put On,49,Wagon 6,
+Shree_Vinayak,1,11,Get From,49,Wagon 6,
+Shree_Vinayak,1,12,Put On,51,Wagon 6,
+Shree_Vinayak,1,14,Get From,51,Wagon 6,
+Shree_Vinayak,1,15,Put On,52,Wagon 6,
+Shree_Vinayak,1,17,Get From,52,Wagon 6,
+Shree_Vinayak,1,18,Put On,53,Wagon 6,
+Shree_Vinayak,1,20,Get From,53,Wagon 6,
+Shree_Vinayak,1,21,Put On,54,Wagon 6,
+Shree_Vinayak,1,22,Wait For Sec,10,Wagon 6,
+Shree_Vinayak,1,25,Put On,61,Wagon 6,
+Shree_Vinayak,1,28,Put On,50,Wagon 6,
+Shree_Vinayak,1,1,Get From,60,Wagon 7,
+Shree_Vinayak,1,2,Put On,59,Wagon 7,
+Shree_Vinayak,1,3,Get From,66,Wagon 7,
+Shree_Vinayak,1,4,Put On,60,Wagon 7,
+Shree_Vinayak,1,5,Get From,64,Wagon 7,
+Shree_Vinayak,1,6,Put On,66,Wagon 7,
+Shree_Vinayak,1,7,Get From,61,Wagon 7,
+Shree_Vinayak,1,8,Put On,62,Wagon 7,
+Shree_Vinayak,1,10,Get From,62,Wagon 7,
+Shree_Vinayak,1,11,Put On,64,Wagon 7,
+Osho,1,1,Get From,14,Wagon 2,
+Osho,1,2,Put On,13,Wagon 2,
+Osho,1,3,Get From,13,Wagon 2,
+Osho,1,4,Put On,12,Wagon 2,
+Osho,1,5,Get From,12,Wagon 2,
+Osho,1,6,Put On,11,Wagon 2,
+Osho,1,7,Wait For Int,11,Wagon 2,
+Osho,1,8,Set Int,5,Wagon 2,
+Osho,1,9,Put On,19,Wagon 2,
+Osho,1,10,Wait For Int,4,Wagon 2,
+Osho,1,11,Get From,11,Wagon 2,
+Osho,1,12,Put On,10,Wagon 2,
+Osho,1,13,Wait For Sec,10,Wagon 2,
+Osho,1,14,Get From,10,Wagon 2,
+Osho,1,15,Put On,9,Wagon 2,
+Osho,1,16,Wait For Int,6,Wagon 2,
+Osho,1,17,Get From,8,Wagon 2,
+Osho,1,18,Wait For Int,9,Wagon 2,
+Osho,1,19,Get From,6,Wagon 2,
+Osho,1,20,Put On,6,Wagon 2,
+Osho,1,21,Set Int,8,Wagon 2,
+Osho,1,22,Put On,12,Wagon 2,
+Osho,1,1,Get From,18,Wagon 3,
+Osho,1,2,Put On,19,Wagon 3,
+Osho,1,3,Get From,17,Wagon 3,
+Osho,1,4,Put On,18,Wagon 3,
+Osho,1,5,Get From,19,Wagon 3,
+Osho,1,6,Put On,20,Wagon 3,
+Osho,1,7,Set Int,11,Wagon 3,
+Osho,1,8,Get From,21,Wagon 3,
+Osho,1,9,Put On,22,Wagon 3,
+Osho,1,10,Get From,22,Wagon 3,
+Osho,1,11,Put On,23,Wagon 3,
+Osho,1,12,Wait For Int,16,Wagon 3,
+Osho,1,13,Get From,23,Wagon 3,
+Osho,1,14,Put On,24,Wagon 3,
+Osho,1,15,Wait For Int,7,Wagon 3,
+Osho,1,16,Get From,30,Wagon 3,
+Osho,1,17,Set Int,12,Wagon 3,
+Osho,1,18,Put On,16,Wagon 3,
+Osho,1,19,Wait For Sec,36,Wagon 3,
+Osho,1,20,Get From,16,Wagon 3,
+Osho,1,21,Put On,14,Wagon 3,
+Osho,1,22,Put On,20,Wagon 3,
+Osho,1,1,Get From,26,Wagon 4,
+Osho,1,2,Put On,27,Wagon 4,
+Osho,1,3,Wait For Sec,35,Wagon 4,
+Osho,1,4,Get From,27,Wagon 4,
+Osho,1,9,Set Interlock Timer,150,Wagon 5,
+Shree_Vinayak,1,12,Get From,64,Wagon 7,
+Shree_Vinayak,1,13,Get From,63,Wagon 7,
+Swastid,1,1,Get From,8,Wagon 1,
+Swastid,1,2,Put On,9,Wagon 1,
+Swastid,1,3,Get From,6,Wagon 1,
+Osho,1,10,Wait For Int,13,Wagon 5,
+Swastid,1,4,Put On,7,Wagon 1,
+Swastid,1,5,Wait For Sec,9,Wagon 1,
+Swastid,1,6,Get From,7,Wagon 1,
+Swastid,1,7,Put On,8,Wagon 1,
+Swastid,1,8,Get From,2,Wagon 1,
+Swastid,1,9,Put On,6,Wagon 1,
+Swastid,1,10,Wait For Sec,10,Wagon 1,
+Swastid,1,11,Get From,9,Wagon 1,
+Swastid,1,12,Put On,10,Wagon 1,
+Swastid,1,13,Wait For Sec,9,Wagon 1,
+Swastid,1,14,Get From,10,Wagon 1,
+Swastid,1,15,Wait For Int,1,Wagon 1,
+Swastid,1,16,Put On,11,Wagon 1,
+Swastid,1,17,Set Int,5,Wagon 1,
+Swastid,1,18,Get From,1,Wagon 1,
+Swastid,1,19,Put On,2,Wagon 1,
+Swastid,1,20,Put On,8,Wagon 1,
+Swastid,1,1,Get From,12,Wagon 2,
+Swastid,1,2,Put On,13,Wagon 2,
+Swastid,1,3,Wait For Int,9,Wagon 2,
+Swastid,1,4,Get From,16,Wagon 2,
+Swastid,1,5,Put On,17,Wagon 2,
+Swastid,1,6,Wait For Sec,9,Wagon 2,
+Swastid,1,7,Get From,13,Wagon 2,
+Swastid,1,8,Set Int,1,Wagon 2,
+Swastid,1,9,Put On,14,Wagon 2,
+Swastid,1,10,Wait For Sec,9,Wagon 2,
+Swastid,1,11,Get From,14,Wagon 2,
+Swastid,1,12,Set Int,2,Wagon 2,
+Swastid,1,13,Put On,15,Wagon 2,
+Swastid,1,14,Wait For Sec,9,Wagon 2,
+Swastid,1,15,Get From,15,Wagon 2,
+Swastid,1,16,Put On,16,Wagon 2,
+Swastid,1,17,Set Int,13,Wagon 2,
+Swastid,1,18,Wait For Int,5,Wagon 2,
+Swastid,1,19,Get From,11,Wagon 2,
+Swastid,1,20,Put On,12,Wagon 2,
+Swastid,1,21,Put On,15,Wagon 2,
+Swastid,1,1,Get From,23,Wagon 3,
+Swastid,1,2,Put On,24,Wagon 3,
+Swastid,1,3,Get From,17,Wagon 3,
+Swastid,1,4,Put On,18,Wagon 3,
+Swastid,1,5,Wait For Sec,10,Wagon 3,
+Osho,1,11,Get From,38,Wagon 5,
+Swastid,1,6,Get From,18,Wagon 3,
+Swastid,1,7,Set Int,9,Wagon 3,
+Swastid,1,8,Put On,19,Wagon 3,
+Swastid,1,9,Wait For Sec,20,Wagon 3,
+Swastid,1,10,Get From,19,Wagon 3,
+Swastid,1,11,Put On,20,Wagon 3,
+Swastid,1,12,Wait For Sec,20,Wagon 3,
+Swastid,1,13,Get From,20,Wagon 3,
+Swastid,1,14,Put On,21,Wagon 3,
+Swastid,1,15,Wait For Sec,60,Wagon 3,
+Swastid,1,16,Get From,21,Wagon 3,
+Swastid,1,17,Put On,22,Wagon 3,
+Swastid,1,18,Wait For Sec,20,Wagon 3,
+Swastid,1,19,Get From,22,Wagon 3,
+Swastid,1,20,Put On,23,Wagon 3,
+Swastid,1,1,Get From,37,Wagon 4,
+Swastid,1,2,Put On,38,Wagon 4,
+Swastid,1,3,Get From,25,Wagon 4,
+Swastid,1,4,Put On,30,Wagon 4,
+Swastid,1,5,Get From,24,Wagon 4,
+Swastid,1,6,Put On,25,Wagon 4,
+Swastid,1,7,Get From,31,Wagon 4,
+Swastid,1,8,Put On,34,Wagon 4,
+Swastid,1,9,Get From,34,Wagon 4,
+Swastid,1,10,Put On,35,Wagon 4,
+Swastid,1,11,Wait For Sec,30,Wagon 4,
+Swastid,1,12,Get From,35,Wagon 4,
+Swastid,1,13,Put On,36,Wagon 4,
+Swastid,1,14,Get From,36,Wagon 4,
+Swastid,1,15,Put On,37,Wagon 4,
+Swastid,1,16,Get From,30,Wagon 4,
+Swastid,1,17,Put On,31,Wagon 4,
+Swastid,1,18,Put On,36,Wagon 4,
+Swastid,1,1,Get From,41,Wagon 5,
+Swastid,1,2,Put On,42,Wagon 5,
+Swastid,1,3,Wait For Sec,9,Wagon 5,
+Swastid,1,4,Get From,42,Wagon 5,
+Swastid,1,5,Put On,43,Wagon 5,
+Swastid,1,6,Wait For Sec,9,Wagon 5,
+Swastid,1,7,Get From,43,Wagon 5,
+Swastid,1,8,Put On,44,Wagon 5,
+Swastid,1,9,Wait For Sec,9,Wagon 5,
+Swastid,1,10,Get From,44,Wagon 5,
+Swastid,1,11,Put On,45,Wagon 5,
+Swastid,1,12,Wait For Sec,9,Wagon 5,
+Swastid,1,13,Get From,45,Wagon 5,
+Swastid,1,14,Put On,46,Wagon 5,
+Swastid,1,15,Wait For Sec,5,Wagon 5,
+Swastid,1,16,Get From,47,Wagon 5,
+Swastid,1,17,Put On,48,Wagon 5,
+Swastid,1,18,Get From,46,Wagon 5,
+Swastid,1,19,Wait For Sec,5,Wagon 5,
+Swastid,1,20,Put On,47,Wagon 5,
+Swastid,1,21,Get From,38,Wagon 5,
+Swastid,1,22,Put On,39,Wagon 5,
+Swastid,1,23,Get From,39,Wagon 5,
+Swastid,1,24,Put On,40,Wagon 5,
+Swastid,1,25,Wait For Sec,9,Wagon 5,
+Swastid,1,26,Get From,40,Wagon 5,
+Swastid,1,27,Put On,41,Wagon 5,
+Prius,1,1,Get From,14,Wagon 1,Program 1
+Prius,1,2,Put On,18,Wagon 1,Program 1
+Osho,1,14,Wait Interlock Timer,150,Wagon 5,
+Prius,1,3,Get From,1,Wagon 1,Program 1
+Prius,1,4,Put On,2,Wagon 1,Program 1
+Prius,1,5,Get From,10,Wagon 1,Program 1
+Prius,1,6,Put On,11,Wagon 1,Program 1
+Prius,1,7,Wait For Sec,10,Wagon 1,Program 1
+Prius,1,8,Get From,11,Wagon 1,Program 1
+Prius,1,9,Put On,12,Wagon 1,Program 1
+Prius,1,10,Wait For Sec,10,Wagon 1,Program 1
+Prius,1,11,Get From,12,Wagon 1,Program 1
+Prius,1,12,Put On,13,Wagon 1,Program 1
+Prius,1,13,Get From,3,Wagon 1,Program 1
+Prius,1,14,Put On,5,Wagon 1,Program 1
+Prius,1,15,Get From,2,Wagon 1,Program 1
+Prius,1,16,Put On,3,Wagon 1,Program 1
+Prius,1,17,Get From,5,Wagon 1,Program 1
+Prius,1,18,Put On,6,Wagon 1,Program 1
+Prius,1,19,Wait For Sec,10,Wagon 1,Program 1
+Prius,1,20,Get From,6,Wagon 1,Program 1
+Prius,1,21,Put On,7,Wagon 1,Program 1
+Prius,1,22,Wait For Sec,10,Wagon 1,Program 1
+Prius,1,23,Get From,7,Wagon 1,Program 1
+Prius,1,24,Put On,8,Wagon 1,Program 1
+Prius,1,25,Get From,13,Wagon 1,Program 1
+Prius,1,26,Put On,9,Wagon 1,Program 1
+Prius,1,27,Wait For Sec,10,Wagon 1,Program 1
+Prius,1,28,Get From,9,Wagon 1,Program 1
+Prius,1,29,Put On,10,Wagon 1,Program 1
+Prius,1,1,Get From,26,Wagon 2,Program 1
+Prius,1,2,Put On,28,Wagon 2,Program 1
+Prius,1,3,Get From,25,Wagon 2,Program 1
+Prius,1,4,Put On,26,Wagon 2,Program 1
+Prius,1,5,Get From,28,Wagon 2,Program 1
+Prius,1,6,Put On,29,Wagon 2,Program 1
+Prius,1,7,Wait For Sec,10,Wagon 2,Program 1
+Prius,1,8,Get From,29,Wagon 2,Program 1
+Prius,1,9,Put On,30,Wagon 2,Program 1
+Prius,1,10,Get From,18,Wagon 2,Program 1
+Prius,1,11,Put On,19,Wagon 2,Program 1
+Prius,1,12,Wait For Sec,10,Wagon 2,Program 1
+Prius,1,13,Get From,19,Wagon 2,Program 1
+Prius,1,14,Put On,20,Wagon 2,Program 1
+Prius,1,15,Wait For Sec,10,Wagon 2,Program 1
+Prius,1,16,Get From,20,Wagon 2,Program 1
+Prius,1,17,Put On,21,Wagon 2,Program 1
+Prius,1,18,Wait For Sec,10,Wagon 2,Program 1
+Prius,1,19,Get From,21,Wagon 2,Program 1
+Prius,1,20,Put On,22,Wagon 2,Program 1
+Prius,1,21,Wait For Sec,10,Wagon 2,Program 1
+Prius,1,22,Get From,22,Wagon 2,Program 1
+Prius,1,23,Put On,25,Wagon 2,Program 1
+Prius,1,1,Get From,30,Wagon 3,Program 1
+Osho,1,15,Get From,40,Wagon 5,
+Prius,1,2,Put On,32,Wagon 3,Program 1
+Prius,1,3,Get From,36,Wagon 3,Program 1
+Prius,1,4,Put On,37,Wagon 3,Program 1
+Prius,1,5,Get From,32,Wagon 3,Program 1
+Prius,1,6,Put On,33,Wagon 3,Program 1
+Prius,1,7,Get From,37,Wagon 3,Program 1
+Prius,1,8,Put On,38,Wagon 3,Program 1
+Prius,1,9,Get From,33,Wagon 3,Program 1
+Prius,1,10,Put On,34,Wagon 3,Program 1
+Prius,1,11,Get From,35,Wagon 3,Program 1
+Prius,1,12,Put On,36,Wagon 3,Program 1
+Prius,1,13,Get From,34,Wagon 3,Program 1
+Prius,1,14,Put On,35,Wagon 3,Program 1
+Prius,1,15,Get From,38,Wagon 3,Program 1
+Prius,1,16,Put On,39,Wagon 3,Program 1
+Prius,1,17,Wait For Sec,10,Wagon 3,Program 1
+Prius,1,18,Get From,39,Wagon 3,Program 1
+Prius,1,19,Put On,40,Wagon 3,Program 1
+Prius,1,20,Wait For Sec,10,Wagon 3,Program 1
+Prius,1,21,Get From,40,Wagon 3,Program 1
+Prius,1,22,Put On,41,Wagon 3,Program 1
+Prius,1,23,Wait For Sec,10,Wagon 3,Program 1
+Prius,1,24,Get From,41,Wagon 3,Program 1
+Prius,1,25,Put On,42,Wagon 3,Program 1
+Prius,1,26,Wait For Sec,10,Wagon 3,Program 1
+Prius,1,27,Get From,42,Wagon 3,Program 1
+Prius,1,28,Put On,43,Wagon 3,Program 1
+Prius,1,29,Wait For Sec,10,Wagon 3,Program 1
+Prius,1,30,Get From,43,Wagon 3,Program 1
+Prius,1,31,Put On,44,Wagon 3,Program 1
+Prius,1,32,Put On,31,Wagon 3,Program 1
+Prius,1,1,Get From,52,Wagon 4,Program 1
+Prius,1,2,Put On,53,Wagon 4,Program 1
+Prius,1,3,Get From,44,Wagon 4,Program 1
+Prius,1,4,Put On,45,Wagon 4,Program 1
+Prius,1,5,Wait For Sec,10,Wagon 4,Program 1
+Prius,1,6,Get From,45,Wagon 4,Program 1
+Prius,1,7,Put On,46,Wagon 4,Program 1
+Prius,1,8,Get From,53,Wagon 4,Program 1
+Prius,1,9,Put On,55,Wagon 4,Program 1
+Prius,1,10,Get From,57,Wagon 4,Program 1
+Prius,1,11,Put On,58,Wagon 4,Program 1
+Prius,1,12,Get From,55,Wagon 4,Program 1
+Prius,1,13,Put On,57,Wagon 4,Program 1
+Prius,1,14,Get From,58,Wagon 4,Program 1
+Prius,1,15,Put On,59,Wagon 4,Program 1
+Prius,1,16,Wait For Sec,10,Wagon 4,Program 1
+Prius,1,17,Get From,59,Wagon 4,Program 1
+Prius,1,18,Put On,60,Wagon 4,Program 1
+Prius,1,19,Get From,46,Wagon 4,Program 1
+Prius,1,20,Put On,47,Wagon 4,Program 1
+Prius,1,21,Wait For Sec,10,Wagon 4,Program 1
+Osho,1,16,Put On,38,Wagon 5,
+Prius,1,22,Get From,47,Wagon 4,Program 1
+Prius,1,23,Put On,48,Wagon 4,Program 1
+Prius,1,24,Wait For Sec,10,Wagon 4,Program 1
+Prius,1,25,Get From,48,Wagon 4,Program 1
+Prius,1,26,Put On,49,Wagon 4,Program 1
+Prius,1,27,Wait For Sec,10,Wagon 4,Program 1
+Prius,1,28,Get From,49,Wagon 4,Program 1
+Prius,1,29,Put On,50,Wagon 4,Program 1
+Prius,1,30,Wait For Sec,10,Wagon 4,Program 1
+Prius,1,31,Get From,50,Wagon 4,Program 1
+Prius,1,32,Put On,51,Wagon 4,Program 1
+Prius,1,33,Wait For Sec,10,Wagon 4,Program 1
+Prius,1,34,Get From,51,Wagon 4,Program 1
+Prius,1,35,Put On,52,Wagon 4,Program 1
+Bhagwan,1,1,Get From,6,Wagon 1,Program 1
+Bhagwan,1,2,Put On,7,Wagon 1,Program 1
+Bhagwan,1,3,Get From,7,Wagon 1,Program 1
+Bhagwan,1,4,Put On,8,Wagon 1,Program 1
+Bhagwan,1,5,Get From,8,Wagon 1,Program 1
+Bhagwan,1,6,Put On,9,Wagon 1,Program 1
+Bhagwan,1,7,Set Int,1,Wagon 1,Program 1
+Bhagwan,1,8,Get From,3,Wagon 1,Program 1
+Bhagwan,1,9,Put On,5,Wagon 1,Program 1
+Bhagwan,1,10,Get From,5,Wagon 1,Program 1
+Bhagwan,1,11,Put On,6,Wagon 1,Program 1
+Bhagwan,1,12,Get From,1,Wagon 1,Program 1
+Bhagwan,1,13,Put On,3,Wagon 1,Program 1
+Bhagwan,1,14,Wait For Int,4,Wagon 1,Program 1
+Bhagwan,1,15,Get From,8,Wagon 1,Program 1
+Bhagwan,1,16,Set Int,5,Wagon 1,Program 1
+Bhagwan,1,17,Put On,1,Wagon 1,Program 1
+Bhagwan,1,1,Get From,13,Wagon 2,Program 1
+Bhagwan,1,2,Put On,14,Wagon 2,Program 1
+Bhagwan,1,3,Get From,12,Wagon 2,Program 1
+Bhagwan,1,4,Put On,13,Wagon 2,Program 1
+Bhagwan,1,5,Get From,14,Wagon 2,Program 1
+Bhagwan,1,6,Put On,15,Wagon 2,Program 1
+Bhagwan,1,7,Get From,15,Wagon 2,Program 1
+Bhagwan,1,8,Put On,16,Wagon 2,Program 1
+Bhagwan,1,9,Set Int,2,Wagon 2,Program 1
+Bhagwan,1,10,Put On,12,Wagon 2,Program 1
+Bhagwan,1,11,Wait For Int,1,Wagon 2,Program 1
+Bhagwan,1,12,Wait For Int,3,Wagon 2,Program 1
+Bhagwan,1,13,Get From,14,Wagon 2,Program 1
+Bhagwan,1,14,Put On,8,Wagon 2,Program 1
+Bhagwan,1,15,Set Int,4,Wagon 2,Program 1
+Bhagwan,1,16,Put On,10,Wagon 2,Program 1
+Bhagwan,1,17,Wait For Int,5,Wagon 2,Program 1
+Bhagwan,1,18,Get From,9,Wagon 2,Program 1
+Bhagwan,1,19,Put On,11,Wagon 2,Program 1
+Bhagwan,1,20,Get From,11,Wagon 2,Program 1
+Bhagwan,1,21,Put On,12,Wagon 2,Program 1
+Prj001,1,6,Get From,2,Wagon 1,
+Bhagwan,1,2,Get From,20,Wagon 3,Program 1
+Bhagwan,1,3,Put On,18,Wagon 3,Program 1
+Bhagwan,1,5,Get From,19,Wagon 3,Program 1
+Bhagwan,1,6,Put On,20,Wagon 3,Program 1
+Bhagwan,1,7,Put On,19,Wagon 3,Program 1
+Bhagwan,1,8,Wait For Int,2,Wagon 3,Program 1
+Bhagwan,1,9,Get From,18,Wagon 3,Program 1
+Bhagwan,1,10,Put On,14,Wagon 3,Program 1
+Bhagwan,1,11,Set Int,3,Wagon 3,Program 1
+Bhagwan,1,12,Put On,16,Wagon 3,Program 1
+Bhagwan,1,13,Get From,16,Wagon 3,Program 1
+Bhagwan,1,14,Put On,17,Wagon 3,Program 1
+Bhagwan,1,15,Get From,17,Wagon 3,Program 1
+Bhagwan,1,16,Put On,18,Wagon 3,Program 1
+Bhagwan,1,17,Get From,18,Wagon 3,Program 1
+Bhagwan,1,18,Put On,19,Wagon 3,Program 1
+Bhagwan,1,1,Set CT Rev,1,Wagon 3,Program 1
+Bhagwan,1,4,Set CT Rev,1,Wagon 3,Program 1
+Prj001,1,7,Set CT Fwd,1,Wagon 1,
+Prj001,1,15,Wait For Sec,30,Wagon 1,
+Prj001,1,18,Wait For Sec,30,Wagon 1,
+Prj001,1,19,Get From,10,Wagon 1,
+Prj001,1,22,Set CT Rev,2,Wagon 1,
+Prj001,1,1,Get From,12,Wagon 2,
+Prj001,2,1,Get From,12,Wagon 2,
+Prj001,2,3,Get From,11,Wagon 2,
+Prj001,2,4,Set CT Rev,2,Wagon 2,
+Prj001,2,6,Get From,14,Wagon 2,
+Prj001,1,6,Get From,14,Wagon 2,
+Prj001,2,8,Wait For Sec,30,Wagon 2,
+Prj001,1,8,Wait For Sec,30,Wagon 2,
+Prj001,2,9,Get From,15,Wagon 2,
+Prj001,1,9,Get From,15,Wagon 2,
+Osho,1,1,Get From,9,Wagon 1,
+Osho,1,2,Put On,8,Wagon 1,
+Osho,1,3,Get From,4,Wagon 1,
+Osho,1,4,Put On,3,Wagon 1,
+Osho,1,5,Get From,1,Wagon 1,
+Osho,1,6,Get From,9,Wagon 1,
+Osho,1,7,Wait For Int,5,Wagon 1,
+Osho,1,8,Put On,17,Wagon 1,
+Osho,1,9,Set Int,4,Wagon 1,
+Osho,1,10,Get From,3,Wagon 1,
+Osho,1,11,Put On,1,Wagon 1,
+Osho,1,12,Get From,5,Wagon 1,
+Osho,1,13,Put On,4,Wagon 1,
+Osho,1,14,Get From,2,Wagon 1,
+Osho,1,15,Put On,5,Wagon 1,
+Osho,1,16,Set Int,6,Wagon 1,
+Osho,1,17,Get From,6,Wagon 1,
+Osho,1,18,Set Int,9,Wagon 1,
+Osho,1,19,Put On,2,Wagon 1,
+Osho,1,20,Wait For Int,8,Wagon 1,
+Osho,1,21,Put On,9,Wagon 1,
+p1,1,1,Get From,1,Wagon 1,
+p1,1,2,Put On,2,Wagon 1,
+Osho,1,5,Set Int,1,Wagon 4,
+Osho,1,6,Get From,28,Wagon 4,
+Osho,1,7,Put On,29,Wagon 4,
+Osho,1,8,Set Int,2,Wagon 4,
+Osho,1,9,Get From,24,Wagon 4,
+Osho,1,10,Put On,25,Wagon 4,
+Osho,1,11,Set Int,16,Wagon 4,
+Osho,1,12,Put On,26,Wagon 4,
+Osho,1,13,Wait For Int,3,Wagon 4,
+Osho,1,14,Get From,32,Wagon 4,
+Osho,1,15,Put On,31,Wagon 4,
+Osho,1,16,Get From,31,Wagon 4,
+Osho,1,17,Put On,30,Wagon 4,
+Osho,1,18,Set Int,7,Wagon 4,
+Osho,1,19,Put On,33,Wagon 4,
+Osho,1,20,Set Int,13,Wagon 4,
+Osho,1,21,Wait For Int,12,Wagon 4,
+Osho,1,22,Get From,20,Wagon 4,
+Osho,1,23,Put On,21,Wagon 4,
+Osho,1,24,Get From,25,Wagon 4,
+Osho,1,25,Put On,26,Wagon 4,
+Osho,1,1,Wait For Int,1,Wagon 5,
+Osho,1,2,Get From,33,Wagon 5,
+Osho,1,3,Put On,32,Wagon 5,
+Osho,1,4,Wait For Int,2,Wagon 5,
+Osho,1,5,Get From,29,Wagon 5,
+Osho,1,6,Set Int,3,Wagon 5,
+Osho,1,7,Put On,40,Wagon 5,
+Osho,1,8,Wait For Sec,50,Wagon 5,
+Osho,1,12,Put On,33,Wagon 5,
+Osho,1,13,Put On,40,Wagon 5,
+Osho,1,17,Put On,35,Wagon 5,
+p1,1,3,Wait For Int,1,Wagon 1,
+A1001,1,1,Get From,1,Wagon 1,
+A1001,1,2,Put On,5,Wagon 1,
+A1001,1,3,Get From,2,Wagon 1,
+A1001,1,4,Put On,5,Wagon 1,
+A1001,1,5,Get From,3,Wagon 1,
+A1001,1,6,Put On,7,Wagon 1,
+A1001,1,7,Get From,4,Wagon 1,
+A1001,1,8,Put On,11,Wagon 1,
+A1001,1,9,Get From,5,Wagon 1,
+A1001,1,10,Put On,8,Wagon 1,
+p1,1,4,Get From,6,Wagon 1,
+p1,1,7,Wait For Int,3,Wagon 1,
+p1,1,11,Get From,6,Wagon 1,
+p1,1,5,Set Int,2,Wagon 1,
+p1,1,6,Put On,1,Wagon 1,
+p1,1,8,Get From,5,Wagon 1,
+p1,1,9,Put On,6,Wagon 1,
+p1,1,10,Wait For Sec,30,Wagon 1,
+p1,1,13,Put On,7,Wagon 1,
+p1,1,16,Put On,5,Wagon 1,
+p1,1,17,Set Int,4,Wagon 1,
+p1,1,20,Put On,4,Wagon 1,
+p1,1,23,Put On,3,Wagon 1,
+p1,1,24,Put On,2,Wagon 1,
+Prj001,1,1,Get From,6,Wagon 1,
+Prj001,1,3,Get From,2,Wagon 1,
+Prj001,1,2,Put On,7,Wagon 1,
+Prj001,3,4,Put On,7,Wagon 1,
+Prj001,1,4,Get From,5,Wagon 1,
+Prj001,1,5,Put On ,8,Wagon 1,
+Prj001,1,8,Put On,5,Wagon 1,
+Prj001,1,9,Get From,7,Wagon 1,
+Prj001,1,10,Put On,8,Wagon 1,
+Prj001,1,11,Get From,2,Wagon 1,
+Prj001,1,12,Put On ,8,Wagon 1,
+Prj001,1,13,Get From,8,Wagon 1,
+Prj001,1,14,Put On ,9,Wagon 1,
+Prj001,1,16,Get From,9,Wagon 1,
+Prj001,1,17,Put On,10,Wagon 1,
+Prj001,1,20,Put On,11,Wagon 1,
+p1,1,12,Wait For Sec,5,Wagon 1,
+p1,1,14,Get From,4,Wagon 1,
+p1,1,15,Wait For Sec,5,Wagon 1,
+p1,1,18,Get From,3,Wagon 1,
+p1,1,19,Wait For Sec,5,Wagon 1,
+p1,1,21,Get From,2,Wagon 1,
+p1,1,22,Wait For Sec,5,Wagon 1,
+Prj001,2,11,Wait For Sec,45,Wagon 2,
+Prj001,1,11,Wait For Sec,45,Wagon 2,
+Prj001,2,12,Get From,16,Wagon 2,
+Prj001,1,12,Get From,16,Wagon 2,
+Prj001,1,14,Get From,21,Wagon 2,
+Prj001,2,14,Get From,21,Wagon 2,
+Prj001,2,17,Set CT Rev,1,Wagon 2,
+Prj001,1,18,Get From,18,Wagon 2,
+Prj001,2,18,Get From,18,Wagon 2,
+Shree_Vinayak,1,3,Wait For Int,1,Wagon 1,
+Shree_Vinayak,1,6,Wait For Int,3,Wagon 1,
+Shree_Vinayak,1,12,Get From,6,Wagon 1,
+Shree_Vinayak,1,13,Wait For Sec,5,Wagon 1,
+Shree_Vinayak,1,15,Get From,4,Wagon 1,
+Shree_Vinayak,1,16,Wait For Sec,5,Wagon 1,
+Shree_Vinayak,1,19,Get From,3,Wagon 1,
+Shree_Vinayak,1,20,Wait For Sec,5,Wagon 1,
+Shree_Vinayak,1,22,Get From,2,Wagon 1,
+Shree_Vinayak,1,23,Wait For Sec,5,Wagon 1,
+Shree_Vinayak,1,1,Get From,8,Wagon 2,
+Shree_Vinayak,1,2,Wait For Sec,5,Wagon 2,
+Shree_Vinayak,1,6,Get From,7,Wagon 2,
+Shree_Vinayak,1,7,Wait For Sec,5,Wagon 2,
+Shree_Vinayak,1,12,Get From,12,Wagon 2,
+Shree_Vinayak,1,13,Wait For Sec,5,Wagon 2,
+Shree_Vinayak,1,15,Get From,10,Wagon 2,
+Shree_Vinayak,1,19,Get From,11,Wagon 2,
+Shree_Vinayak,1,20,Wait For Sec,5,Wagon 2,
+Shree_Vinayak,1,23,Wait For Sec,5,Wagon 2,
+Shree_Vinayak,1,24,Wait For Int,6,Wagon 2,
+Shree_Vinayak,1,26,Get From,15,Wagon 2,
+Shree_Vinayak,1,27,Wait For Int,4,Wagon 2,
+Shree_Vinayak,1,28,Set Int,5,Wagon 2,
+Shree_Vinayak,1,3,Get From,19,Wagon 3,
+Shree_Vinayak,1,4,Wait For Sec,5,Wagon 3,
+Shree_Vinayak,1,6,Get From,20,Wagon 3,
+Shree_Vinayak,1,7,Wait For Int,10,Wagon 3,
+Shree_Vinayak,1,10,Wait For Sec,5,Wagon 3,
+Shree_Vinayak,1,15,Wait For Sec,5,Wagon 3,
+Shree_Vinayak,1,19,Get From,17,Wagon 3,
+Shree_Vinayak,1,23,Get From,18,Wagon 3,
+Shree_Vinayak,1,26,Wait For Int,5,Wagon 3,
+Shree_Vinayak,1,1,Get From,21,Wagon 4,
+Shree_Vinayak,1,2,Wait For Sec,10,Wagon 4,
+Shree_Vinayak,1,6,Get From,35,Wagon 4,
+Shree_Vinayak,1,7,Wait For Sec,5,Wagon 4,
+Shree_Vinayak,1,11,Get From,36,Wagon 4,
+Shree_Vinayak,1,12,Wait For Sec,5,Wagon 4,
+Shree_Vinayak,1,16,Get From,23,Wagon 4,
+Shree_Vinayak,1,17,Wait For Int,8,Wagon 4,
+Shree_Vinayak,1,3,Wait For Int,9,Wagon 5,
+Shree_Vinayak,1,7,Set CT Rev,1,Wagon 5,
+Shree_Vinayak,1,8,Wait For Int,10,Wagon 5,
+Shree_Vinayak,1,14,Get From,42,Wagon 5,
+Shree_Vinayak,1,1,Get From,45,Wagon 6,
+Shree_Vinayak,1,4,Wait For Sec,30,Wagon 6,
+Shree_Vinayak,1,7,Wait For Sec,10,Wagon 6,
+Shree_Vinayak,1,10,Wait For Sec,10,Wagon 6,
+Shree_Vinayak,1,13,Wait For Sec,30,Wagon 6,
+Shree_Vinayak,1,16,Wait For Sec,10,Wagon 6,
+Shree_Vinayak,1,19,Wait For Sec,10,Wagon 6,
+Shree_Vinayak,1,23,Get From,54,Wagon 6,
+Shree_Vinayak,1,24,Wait For Int,11,Wagon 6,
+Shree_Vinayak,1,26,Get From,59,Wagon 6,
+Shree_Vinayak,1,27,Wait For Int,10,Wagon 6,
+Shree_Vinayak,1,9,Wait For Sec,30,Wagon 7,
