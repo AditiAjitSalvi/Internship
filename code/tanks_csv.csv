@@ -8,6 +8,4 @@ project_id,station_no,process_name,critical_status,distance_mm,dip_time_sec
 2,11,Loading,High,1220,0
 2,2,Clean 1,Low,1500,120
 2,13,Rinse 1,Low,2300,45
-2,4,Clean 2,Low,3100,90
-2,15,Rinse 2,Low,3900,45
-2,16,Unloading,High,4700,0
+

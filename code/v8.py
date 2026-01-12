@@ -9,6 +9,11 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.distributions import Categorical
 from tabulate import tabulate
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+import numpy as np
+import time
 
 # ==========================================
 # CONFIGURATION & HYPERPARAMETERS
@@ -30,6 +35,7 @@ N_LAYERS = 2
 MAX_STATIONS = 200 
 MAX_STEPS = 50     
 BATCH_SIZE = 16
+UPDATE_ITERS = 5 # PPO update iterations
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
@@ -105,6 +111,7 @@ def load_data():
                 seq_id = row['ProgramNo'] + "_" + row['ProjectID']
                 cmd = row['Instruction']
                 stn = int(row['InstructionValue']) if row['InstructionValue'] else 0
+                stn = min(stn, MAX_STATIONS - 1)
                 if cmd not in vocab_cmd:
                     vocab_cmd[cmd] = len(vocab_cmd)
                 sequences[seq_id].append((vocab_cmd[cmd], stn))
@@ -189,6 +196,26 @@ class ActorCritic(nn.Module):
         
         state = torch.cat([ctx_seq, ctx_safe], dim=-1)
         return torch.softmax(self.actor_cmd(state), dim=-1), torch.softmax(self.actor_stn(state), dim=-1), self.critic(state)
+class Memory:
+    def __init__(self):
+        self.actions_cmd = []
+        self.actions_stn = []
+        self.states_cmd = []
+        self.states_stn = []
+        self.states_safe = []
+        self.logprobs = []
+        self.rewards = []
+        self.is_terminals = []
+    
+    def clear(self):
+        del self.actions_cmd[:]
+        del self.actions_stn[:]
+        del self.states_cmd[:]
+        del self.states_stn[:]
+        del self.states_safe[:]
+        del self.logprobs[:]
+        del self.rewards[:]
+        del self.is_terminals[:]
 
 class PPOAgent:
     def __init__(self, vocab_cmd, n_stations, adj_list):
@@ -197,7 +224,57 @@ class PPOAgent:
         self.adj_matrix = self._build_adj_matrix(adj_list, n_stations)
         self.policy = ActorCritic(len(vocab_cmd), n_stations).to(device)
         self.optimizer = optim.Adam(self.policy.parameters(), lr=LR)
+        self.MseLoss = nn.MSELoss()
         
+    def update(self, memory):
+        # Basic PPO Update
+        old_states_cmd = torch.stack(memory.states_cmd).to(device).detach()
+        old_states_stn = torch.stack(memory.states_stn).to(device).detach()
+        old_states_safe = torch.stack(memory.states_safe).to(device).detach()
+        old_actions_cmd = torch.tensor(memory.actions_cmd).to(device).detach()
+        old_actions_stn = torch.tensor(memory.actions_stn).to(device).detach()
+        old_logprobs = torch.stack(memory.logprobs).to(device).detach()
+        
+        # Calculate Rewards-to-go
+        rewards = []
+        discounted_reward = 0
+        for reward, is_terminal in zip(reversed(memory.rewards), reversed(memory.is_terminals)):
+            if is_terminal:
+                discounted_reward = 0
+            discounted_reward = reward + (GAMMA * discounted_reward)
+            rewards.insert(0, discounted_reward)
+            
+        rewards = torch.tensor(rewards, dtype=torch.float32).to(device)
+        rewards = (rewards - rewards.mean()) / (rewards.std() + 1e-7)
+        
+        for _ in range(UPDATE_ITERS):
+            # Evaluating old actions and values
+            # Flatten the batch for the policy
+            probs_cmd, probs_stn, state_values = self.policy(old_states_cmd, old_states_stn, old_states_safe, self.adj_matrix)
+            
+            dist_cmd = Categorical(probs_cmd)
+            dist_stn = Categorical(probs_stn)
+            
+            logprobs = dist_cmd.log_prob(old_actions_cmd) + dist_stn.log_prob(old_actions_stn)
+            dist_entropy = dist_cmd.entropy() + dist_stn.entropy()
+            state_values = torch.squeeze(state_values)
+            
+            # ratios = exp(logprobs - old_logprobs)
+            ratios = torch.exp(logprobs - old_logprobs)
+
+            # Surrogates
+            advantages = rewards - state_values.detach()   
+            surr1 = ratios * advantages
+            surr2 = torch.clamp(ratios, 1-EPS_CLIP, 1+EPS_CLIP) * advantages
+
+            # Loss
+            loss = -torch.min(surr1, surr2) + 0.5*self.MseLoss(state_values, rewards) - 0.01*dist_entropy
+            
+            # Take gradient step
+            self.optimizer.zero_grad()
+            loss.mean().backward()
+            self.optimizer.step()
+
     def _build_adj_matrix(self, adj_list, n):
         mat = torch.zeros((n, n), device=device)
         for u, neighbors in adj_list.items():
@@ -208,16 +285,20 @@ class PPOAgent:
         return mat
 
     def select_action(self, cmd_seq, stn_seq, station_states):
-        cmd_seq = torch.tensor([cmd_seq], dtype=torch.long).to(device)
-        stn_seq = torch.tensor([stn_seq], dtype=torch.long).to(device)
+        # Truncate sequences to MAX_STEPS
+        cmd_seq = cmd_seq[-MAX_STEPS:]
+        stn_seq = stn_seq[-MAX_STEPS:]
+        cmd_seq_t = torch.tensor([cmd_seq], dtype=torch.long).to(device)
+        stn_seq_t = torch.tensor([stn_seq], dtype=torch.long).to(device)
         station_states = torch.tensor([station_states], dtype=torch.long).to(device)
         with torch.no_grad():
-            probs_cmd, probs_stn, val = self.policy(cmd_seq, stn_seq, station_states, self.adj_matrix)
+            probs_cmd, probs_stn, val = self.policy(cmd_seq_t, stn_seq_t, station_states, self.adj_matrix)
         dist_cmd = Categorical(probs_cmd)
         dist_stn = Categorical(probs_stn)
         action_cmd = dist_cmd.sample()
         action_stn = dist_stn.sample()
-        return action_cmd.item(), action_stn.item(), dist_cmd.log_prob(action_cmd) + dist_stn.log_prob(action_stn), val
+        log_prob = dist_cmd.log_prob(action_cmd) + dist_stn.log_prob(action_stn)
+        return action_cmd.item(), action_stn.item(), log_prob, val
 
 class WagonEnv:
     def __init__(self, adj_list, max_stations):
@@ -327,6 +408,50 @@ def generate_sequence_from_tanks(csv_path, speeds_input=None):
     except Exception as e:
         print(f"Error generating sequence: {e}")
 
+def evaluate_model(agent, train_data, vocab_cmd):
+    """ Evaluates the model on training data and returns true vs predicted labels. """
+    y_true = []
+    y_pred = []
+    rev_vocab = {v: k for k, v in vocab_cmd.items()}
+    
+    print("\nEvaluating model for Confusion Matrix...")
+    for seq in train_data:
+        curr_cmd_seq = [vocab_cmd["<SOS>"]]
+        curr_stn_seq = [0]
+        state = [0] * agent.n_stations
+        
+        # We predict the next command in the sequence
+        for cmd_idx, stn_val in seq:
+            a_cmd, a_stn, _, _ = agent.select_action(curr_cmd_seq, curr_stn_seq, state)
+            
+            y_true.append(rev_vocab.get(cmd_idx, "UNKNOWN"))
+            y_pred.append(rev_vocab.get(a_cmd, "UNKNOWN"))
+            
+            # Update for next step
+            curr_cmd_seq.append(cmd_idx)
+            safe_stn = min(stn_val, agent.n_stations - 1)
+            curr_stn_seq.append(safe_stn)
+            if safe_stn < agent.n_stations:
+                state[safe_stn] = 1
+                
+    return y_true, y_pred
+
+def plot_confusion_matrix(y_true, y_pred, labels):
+    """ Plots and saves a confusion matrix. """
+    cm = confusion_matrix(y_true, y_pred, labels=labels)
+    plt.figure(figsize=(12, 10))
+    sns.heatmap(cm, annot=True, fmt='d', xticklabels=labels, yticklabels=labels, cmap='Greens')
+    plt.xlabel('Predicted Command')
+    plt.ylabel('True Command')
+    plt.title('Confusion Matrix: Model Command Predictions')
+    plt.tight_layout()
+    
+    # Use absolute path to ensure saving
+    save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'confusion_matrix.png')
+    plt.savefig(save_path)
+    plt.close() # Free memory
+    print(f"Confusion matrix plot successfully saved at: {save_path}")
+
 # ==========================================
 # MAIN EXECUTION
 # ==========================================
@@ -351,26 +476,73 @@ def main():
             return
 
         agent = PPOAgent(vocab_cmd, MAX_STATIONS, adj_list)
+        memory = Memory()
         env = WagonEnv(adj_list, MAX_STATIONS)
         
         print("\nStarting RL Training Loop...")
+        start_time = time.time()
         for episode in range(1, 11): 
             state = env.reset()
             curr_cmd_seq = [vocab_cmd["<SOS>"]]
             curr_stn_seq = [0]
             ep_reward = 0
+            
             for t in range(MAX_STEPS):
-                a_cmd, a_stn, _, _ = agent.select_action(curr_cmd_seq, curr_stn_seq, state)
-                next_state, reward, done = env.step(a_cmd, a_stn)
-                curr_cmd_seq.append(a_cmd)
-                curr_stn_seq.append(a_stn)
+                # We need to feed the sequence in a format the model likes (last N steps)
+                # For simplicity in this training loop, we use the sequences as they grow
+                c_seq = curr_cmd_seq[-MAX_STEPS:]
+                s_seq = curr_stn_seq[-MAX_STEPS:]
+                
+                # Convert list to tensor for memory storage
+                c_seq_t = torch.tensor(c_seq, dtype=torch.long)
+                # Pad to MAX_STEPS if needed or just handle variable size
+                # Here we pad with 0 for simplicity in this batching example
+                c_pad = torch.zeros(MAX_STEPS, dtype=torch.long)
+                c_pad[:len(c_seq)] = c_seq_t
+                
+                s_pad = torch.zeros(MAX_STEPS, dtype=torch.long)
+                s_pad[:len(s_seq)] = torch.tensor(s_seq, dtype=torch.long)
+                
+                safe_state_t = torch.tensor(state, dtype=torch.long)
+
+                action_cmd, action_stn, log_prob, val = agent.select_action(curr_cmd_seq, curr_stn_seq, state)
+                
+                # Store in memory
+                memory.states_cmd.append(c_pad)
+                memory.states_stn.append(s_pad)
+                memory.states_safe.append(safe_state_t)
+                memory.actions_cmd.append(action_cmd)
+                memory.actions_stn.append(action_stn)
+                memory.logprobs.append(log_prob)
+                
+                next_state, reward, done = env.step(action_cmd, action_stn)
+                
+                memory.rewards.append(reward)
+                memory.is_terminals.append(done)
+
+                curr_cmd_seq.append(action_cmd)
+                curr_stn_seq.append(action_stn)
                 state = next_state
                 ep_reward += reward
                 if done: break
-            print(f"Episode {episode}: Total Reward = {ep_reward}")
             
-        print("Training Finished. Model saved as 'model_v7.pth'")
-        torch.save(agent.policy.state_dict(), "model_v7.pth")
+            # Update the agent
+            agent.update(memory)
+            memory.clear()
+            
+            print(f"Episode {episode}: Total Reward = {ep_reward:.2f}")
+            
+        end_time = time.time()
+        print(f"Training Finished in {end_time - start_time:.2f}s.")
+        
+        model_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "model_v8.pth")
+        torch.save(agent.policy.state_dict(), model_save_path)
+        print(f"Model saved as '{model_save_path}'")
+
+        # Confusion Matrix Generation
+        y_true, y_pred = evaluate_model(agent, train_data, vocab_cmd)
+        labels = sorted(list(vocab_cmd.keys()))
+        plot_confusion_matrix(y_true, y_pred, labels)
 
 if __name__ == "__main__":
     main()
