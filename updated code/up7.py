@@ -35,7 +35,7 @@ N_HEADS = 4
 N_LAYERS = 2
 
 MAX_STEPS = 50
-MAX_STATIONS = 500
+MAX_STATIONS = 100
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
